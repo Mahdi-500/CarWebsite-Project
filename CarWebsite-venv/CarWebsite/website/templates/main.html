@@ -1,0 +1,13 @@
+<title>صفحه اصلی</title>
+<body>
+    <h2>
+        به وب سایت جستجوی اطلاعات خودرو خوش اومدی
+    </h2>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>

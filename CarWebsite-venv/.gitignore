@@ -1,4 +1,6 @@
-pyvenv.cfg
-Scripts
-Lib
 Include
+Lib
+Scripts
+pyvenv.cfg
+Amoozeshyar/db.sqlite3
+.vscode
