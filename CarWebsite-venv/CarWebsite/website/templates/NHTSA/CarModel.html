@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %} car searching {% endblock title %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        * is required
+        <br><br>
+        <button type="Submit">search</button>
+    </form>
+
+        {% if flag %}
+            {% if result %}
+                search result
+                <br>
+                <ul>
+                    {% for i in result %}
+                    <li>{{i}}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                no result
+            {% endif %}
+        {% endif %}
+
+{% endblock content %}

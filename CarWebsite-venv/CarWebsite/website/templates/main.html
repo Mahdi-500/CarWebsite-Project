@@ -1,7 +1,14 @@
-<title>صفحه اصلی</title>
-<body>
+{% extends "base.html" %}
+{% block title %}Main Page{% endblock title %}
+
+{% block content %}
+    <h1>
+        welcome to our website
+    </h1>
+
     <h2>
-        به وب سایت جستجوی اطلاعات خودرو خوش اومدی
+        <a href='{% url "website:NHTSA_MY_search" %}'>to get all models for a company click here</a>
+        <br>
     </h2>
     {% if messages %}
         <ul class="messages">
@@ -10,4 +17,5 @@
             {% endfor %}
         </ul>
     {% endif %}
-</body>
+
+{% endblock content %}

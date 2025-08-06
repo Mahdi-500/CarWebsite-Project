@@ -5,8 +5,9 @@ from . import views
 
 app_name = "website"
 urlpatterns = [
+    path("", views.MainView, name="main"),
     path("add_car/", views.AddCarView, name="add_car"),
-    path("", views.MainView, name="main")
+    path("search_model/", views.NHTSA_CarModelSearchFormView, name="NHTSA_MY_search"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
