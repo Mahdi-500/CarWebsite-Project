@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from . import forms
 
 from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from io import BytesIO
 
-from .forms import CarForm
+from .forms import CarForm, NHTSA_API_CarModelSearchForm, NHTSA_API_VinDecoderForm
 from .models import Cars
+from types import SimpleNamespace
 import requests
 # Create your views here.
 
@@ -44,10 +44,10 @@ def NHTSA_CarModelSearchFormView(request):
     result = []
     flag = False
     if request.method == "POST":
-        form = forms.NHTSA_API_CarModelSearchForm(request.POST)
+        form = NHTSA_API_CarModelSearchForm(request.POST)
         if form.is_valid():
             flag = True
-            temp = NHTSA_SearchResultsView(request, company_name=form.cleaned_data.get("query_company_name"),
+            temp = NHTSA_CarModelSearchResultsView(request, company_name=form.cleaned_data.get("query_company_name"),
                                         year=form.cleaned_data.get("query_year"),
                                         vehicle_type=form.cleaned_data.get("query_vehicle_type"))
             
@@ -67,7 +67,7 @@ def NHTSA_CarModelSearchFormView(request):
                 "flag":flag
             }
     else:
-        form = forms.NHTSA_API_CarModelSearchForm()
+        form = NHTSA_API_CarModelSearchForm()
         context = {
                 "form":form,
                 "result":result,
@@ -77,7 +77,7 @@ def NHTSA_CarModelSearchFormView(request):
     
 
 
-def NHTSA_SearchResultsView(request, company_name, year, vehicle_type):
+def NHTSA_CarModelSearchResultsView(request, company_name, year, vehicle_type):
 
     company_name = company_name.lower()
     url_values = {}
@@ -104,3 +104,33 @@ def NHTSA_SearchResultsView(request, company_name, year, vehicle_type):
     items = data.get('Results', [])
 
     return items
+
+
+
+def NHTSA_API_VinDecoderView(request):
+    if request.method == "POST":
+        form = NHTSA_API_VinDecoderForm(request.POST)
+
+        if form.is_valid():
+            url = "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/{}?format=json".format(
+                str(form.cleaned_data["query_vin_number"]).upper()
+            )
+            if form.cleaned_data["query_year"]:
+                url = "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/{}?format=json&modelyear={}".format(
+                    str(form.cleaned_data["query_vin_number"]).upper(),
+                    form.cleaned_data["query_year"]
+                )
+            
+            recieved = requests.get(url)
+            if recieved.status_code == 200:
+                r = BytesIO(recieved.content)
+                parser = JSONParser()
+                data = parser.parse(stream=r)
+                items = data['Results'][0]
+                vehicle_obj = SimpleNamespace(**items)
+                return render(request, "NHTSA/Vindecoder.html", {"vehicle":vehicle_obj, "form":form})
+            else:
+                print(f"Request failed with status: {recieved.status_code}")
+    else:
+        form = NHTSA_API_VinDecoderForm()
+        return render(request, "NHTSA/Vindecoder.html", {"form":form})

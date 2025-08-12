@@ -17,28 +17,28 @@ class Cars(models.Model):
         CY3 = 3, "3"
 
     class EngineTypeChoices(models.TextChoices):
-        V_type = "V", "V (خورجینی)"
+        V_type = "V", "V"
         W_type = "W", "W"
-        I_type = "i", "inline(I) (خطی)"
+        I_type = "i", "inline(I)"
         B_type = "Boxer", "Boxer or Flat"
         WA_type = "Wankle", "Wankle"
-        E_type = "Electric", "Electric (برقی)"
-        H_type = "Hybrid", "Hybrid (هیبرید)"
+        E_type = "Electric", "Electric"
+        H_type = "Hybrid", "Hybrid"
 
     class TransmossionChoices(models.TextChoices):
-        M = "Manual", "Manual(دستی)"
-        A = "Automatic", "Automatic (اتوماتیک)"
+        M = "Manual", "Manual"
+        A = "Automatic", "Automatic"
 
     class FuelTypeChoices(models.TextChoices):
-        G = "Gas", "Gasoline (بنزین)"
-        D = "Diesel", "Diesel (دیزل)"
-        H = "Hybrid", "Electricty - Gas (برق - بنزین)"
+        G = "Gas", "Gasoline"
+        D = "Diesel", "Diesel"
+        H = "Hybrid", "Electricty - Gas"
 
     class DriveTypeChoices(models.TextChoices):
-        RWD = "RWD", "Rear-Wheel-Drive (دیفرانسیل عقب)"
-        FWD = "FWD", "Front-Wheel-Drive (دیفرانسیل جلو)"
-        AWD = "AWD", "All-Wheel-Drive (4 چرخ محرک)"
-        WD4 = "4WD", "4-Wheel-Drive (4 چرخ محرک)"
+        RWD = "RWD", "Rear-Wheel-Drive"
+        FWD = "FWD", "Front-Wheel-Drive"
+        AWD = "AWD", "All-Wheel-Drive"
+        WD4 = "4WD", "4-Wheel-Drive"
 
     class StatusChoices(models.TextChoices):
         ACCEPTED = "Accepted", "Accepted"
@@ -53,20 +53,20 @@ class Cars(models.Model):
     # ? overridng manager
     objects = models.Manager()  # default manager
     accepted = StatusManagrer() # new manager
-    manufacturer = models.CharField(max_length=255, blank=False, verbose_name="شرکت سازنده")
-    car_model = models.CharField(max_length=255, blank=False, verbose_name="مدل")
-    cylinders = models.SmallIntegerField(choices=CylinderChoices.choices, blank=False, verbose_name="تعداد سیلندر")
-    engine_type = models.CharField(max_length=10, choices=EngineTypeChoices.choices, blank=False, verbose_name="نوع موتور")
-    transmission = models.CharField(max_length=10, choices=TransmossionChoices.choices, blank=False,verbose_name="نوع گیربکس")
-    fuel_type = models.CharField(max_length=10, choices=FuelTypeChoices.choices, blank=False, verbose_name="نوع سوخت")
-    engine_volume = models.DecimalField(max_digits=2, decimal_places=1, blank=False, verbose_name="حجم موتور (لیتر)")
-    drive_type = models.CharField(max_length=3, choices=DriveTypeChoices.choices, blank=False, verbose_name="نوع دیفرانسیل")
-    image_1 = ResizedImageField(quality=100, upload_to=saving_location, verbose_name="عکس 1")
-    image_2 = ResizedImageField(quality=100, upload_to=saving_location, verbose_name="عکس 2")
-    image_3 = ResizedImageField(quality=100, upload_to=saving_location, verbose_name="عکس 3")
-    details = models.TextField(blank=True, verbose_name="جزئیات")
+    manufacturer = models.CharField(max_length=255, blank=False)
+    car_model = models.CharField(max_length=255, blank=False, verbose_name="Model")
+    cylinders = models.SmallIntegerField(choices=CylinderChoices.choices, blank=False)
+    engine_type = models.CharField(max_length=10, choices=EngineTypeChoices.choices, blank=False, verbose_name="engine type")
+    transmission = models.CharField(max_length=10, choices=TransmossionChoices.choices, blank=False,verbose_name="transmission type")
+    fuel_type = models.CharField(max_length=10, choices=FuelTypeChoices.choices, blank=False, verbose_name="fuel type")
+    engine_volume = models.DecimalField(max_digits=2, decimal_places=1, blank=False, verbose_name="engine volume (Liters)")
+    drive_type = models.CharField(max_length=3, choices=DriveTypeChoices.choices, blank=False, verbose_name="drive type")
+    image_1 = ResizedImageField(quality=100, upload_to=saving_location, verbose_name="image 1")
+    image_2 = ResizedImageField(quality=100, upload_to=saving_location, verbose_name="image 2")
+    image_3 = ResizedImageField(quality=100, upload_to=saving_location, verbose_name="image 3")
+    details = models.TextField(blank=True, verbose_name="description")
 
     created = models.DateTimeField(auto_now_add=True)
     moified = models.DateTimeField(auto_now=True)
 
-    status = models.CharField(max_length=10, choices=StatusChoices.choices, default=StatusChoices.DRAFT, verbose_name="وضعیت")
+    status = models.CharField(max_length=10, choices=StatusChoices.choices, default=StatusChoices.DRAFT, verbose_name="status")
