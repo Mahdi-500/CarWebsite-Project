@@ -70,3 +70,8 @@ class Cars(models.Model):
     moified = models.DateTimeField(auto_now=True)
 
     status = models.CharField(max_length=10, choices=StatusChoices.choices, default=StatusChoices.DRAFT, verbose_name="status")
+
+
+
+class GeneralInformation(models.Model):
+    info = models.JSONField()

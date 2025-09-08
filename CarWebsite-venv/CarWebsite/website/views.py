@@ -7,13 +7,23 @@ from rest_framework.response import Response
 from io import BytesIO
 
 from .forms import CarForm, NHTSA_API_CarModelSearchForm, NHTSA_API_VinDecoderForm
-from .models import Cars
+from .models import Cars, GeneralInformation
 from types import SimpleNamespace
 import requests
 # Create your views here.
 
 def MainView(request):
-    return render(request, "main.html")
+    general_info = GeneralInformation.objects.all().last()
+    info = general_info.info
+    context = {
+        "body_type":info.get("body_types", []),
+        "cylinders":info.get("cylinders", []),
+        "drive_types":info.get("drive_types", []),
+        "fuel_types":info.get("fuel_types", []),
+        "transmission":info.get("transmission", []),
+        "valves":info.get("valves", [])
+    }
+    return render(request, "main.html", context)
 
 def AddCarView(request):
     if request.method == "POST":

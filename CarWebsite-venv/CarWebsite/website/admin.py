@@ -4,3 +4,7 @@ from .models import *
 @admin.register(Cars)
 class CarsAdmin(admin.ModelAdmin):
     list_display = ["manufacturer", "car_model"]
+
+@admin.register(GeneralInformation)
+class GeneralInformationAdmin(admin.ModelAdmin):
+    list_display = ["info"]
