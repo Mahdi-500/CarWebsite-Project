@@ -7,7 +7,7 @@
     2 - create a virtual environment by following the steps blow:
         2.1 - go to your terminal
         2.2 - change the directory to your desired destination
-        2.3 - run this command "python -m venv <name of you virtual environment>
+        2.3 - run this command "python -m venv <name of your virtual environment>
     
     3 - clone the repository
 
