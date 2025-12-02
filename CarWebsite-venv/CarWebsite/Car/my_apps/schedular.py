@@ -3,7 +3,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
 import logging
 import requests
-from website.models import GeneralInformation
+from Car.models import GeneralInformation
 from io import BytesIO
 from rest_framework.parsers import JSONParser
 logger = logging.getLogger(__name__)
