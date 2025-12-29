@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from io import BytesIO
 
 from .forms import CarForm, NHTSA_API_CarModelSearchForm, NHTSA_API_VinDecoderForm
-from .models import Cars, GeneralInformation
+from .models import submittingNewCars, GeneralInformation
 from types import SimpleNamespace
 import requests
 # Create your views here.
@@ -30,7 +30,7 @@ def AddCarView(request):
         form = CarForm(request.POST, request.FILES)
         if form.is_valid():
             try:
-                Cars.objects.get(manufacturer=form.cleaned_data.get("manufacturer"),
+                submittingNewCars.objects.get(manufacturer=form.cleaned_data.get("manufacturer"),
                                 car_model=form.cleaned_data.get("car_model"),
                                 cylinders=form.cleaned_data.get("cylinders"),
                                 engine_type=form.cleaned_data.get("engine_type"),
@@ -40,10 +40,10 @@ def AddCarView(request):
                                 drive_type=form.cleaned_data.get("drive_type"))
                 
                 messages.error(request, "this model is already registered")
-            except Cars.DoesNotExist:
+            except submittingNewCars.DoesNotExist:
                 messages.success(request, "car form submitted successfully")
                 form.save()
-            return redirect("website:main")
+            return redirect("Car:main")
     else:
         form = CarForm()
     return render(request, "add_car.html", {"form":form})
