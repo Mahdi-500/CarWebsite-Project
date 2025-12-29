@@ -3,7 +3,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
-app_name = "website"
+app_name = "Car"
 urlpatterns = [
     path("", views.MainView, name="main"),
     path("add_car/", views.AddCarView, name="add_car"),
