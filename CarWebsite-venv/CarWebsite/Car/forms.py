@@ -1,9 +1,9 @@
 from django import forms
-from .models import Cars
+from .models import submittingNewCars
 
 class CarForm(forms.ModelForm):
     class Meta:
-        model = Cars
+        model = submittingNewCars
         fields = "__all__"
         exclude = ['created', 'modified', 'status']
 
