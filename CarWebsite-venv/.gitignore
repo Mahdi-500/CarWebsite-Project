@@ -1,6 +1,9 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+.github
 Include
 Lib
 Scripts
+.env
+kaggle.json
 pyvenv.cfg
 CarWebsite/db.sqlite3
-.vscode
