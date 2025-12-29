@@ -2,7 +2,7 @@ from django.db import models
 from django_resized import ResizedImageField
 
 # Create your models here.
-class Cars(models.Model):
+class submittingNewCars(models.Model):
 
     def saving_location(instance, filename):
         return f"{instance.manufacturer}/{instance.car_model}/{instance.engine_type}{instance.cylinders}/{filename}"
@@ -53,6 +53,8 @@ class Cars(models.Model):
     # ? overridng manager
     objects = models.Manager()  # default manager
     accepted = StatusManagrer() # new manager
+
+
     manufacturer = models.CharField(max_length=255, blank=False)
     car_model = models.CharField(max_length=255, blank=False, verbose_name="Model")
     cylinders = models.SmallIntegerField(choices=CylinderChoices.choices, blank=False)
