@@ -1,0 +1,267 @@
+{% extends "F1_base.html" %}
+{% load static %}
+{% load custom_tags %}
+
+{% block title %}{{ race_info.name }} - Race Results | F1{% endblock title %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'F1_race_detail.css' %}">
+    <div class="container">
+        {% if 'circuits' in request.path %}
+            <a href="{% url 'Formula1:circuit_details' circuit_id %}" class="back-button">← Back to Circuit details</a>
+        {% elif 'races' in request.path %}
+            <a href="{% url 'Formula1:races_list' %}" class="back-button">← Back to Races list</a>
+        {% endif %}
+        
+        <div class="race-header">
+            <h1 class="race-title">🏆 {{ race_info.name }}</h1>
+            <div class="race-info">
+                <div class="race-info-item">
+                    <span>🏁</span>
+                    <span>{{ race_info.circuit_id }}</span>
+                </div>
+                <div class="race-info-item">
+                    <span>📅</span>
+                    <span>{{ race_info.race_date|date:"F d, Y"|default:"N/A" }}</span>
+                </div>
+                <div class="race-info-item">
+                    <span>🌍</span>
+                    <span>{{ race_info.circuit_id.country }}</span>
+                </div>
+                <div class="race-info-item">
+                    <span>🏆</span>
+                    <span>Round {{ race_info.round|default:"N/A" }}</span>
+                </div>
+            </div>
+            {% comment %} {% if race_info.year < 2025 %}
+                <br>
+                ❗ the empty dates mostly are NA
+            {% endif %} {% endcomment %}
+        </div>
+
+        <!-- Weekend Schedule Section -->
+        <div class="schedule-section">
+            <h2 class="schedule-title">
+                📅 Weekend Schedule
+                {% if race_info.sprint_race_date %}
+                    <span class="sprint-badge">Sprint Weekend</span>
+                {% endif %}
+            </h2>
+            
+            <div class="schedule-grid">
+                <!-- FP1 -->
+                <div class="session-card {% if not race_info.fp1_date %}session-unavailable{% endif %}">
+                    <div class="session-header">
+                        <span class="session-icon">🏎️</span>
+                        <span class="session-name">Free Practice 1</span>
+                    </div>
+                    {% if race_info.fp1_date %}
+                        <div class="session-details">
+                            <div class="session-detail-item">
+                                <span class="session-detail-label">📅 Date:</span>
+                                <span class="session-detail-value">{{ race_info.fp1_date|date:"D, M d, Y" }}</span>
+                            </div>
+                            <div class="session-detail-item">
+                                <span class="session-detail-label">🕐 Time:</span>
+                                <span class="session-detail-value">{{ race_info.fp1_time|time:"H:i" }} IRST</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                
+                {% if not race_info|has_sprint %}
+                    <!-- FP2 -->
+                    <div class="session-card {% if not race_info.fp2_date %}session-unavailable{% endif %}">
+                        <div class="session-header">
+                            <span class="session-icon">🏎️</span>
+                            <span class="session-name">Free Practice 2</span>
+                        </div>
+                        {% if race_info.fp2_date %}
+                            <div class="session-details">
+                                <div class="session-detail-item">
+                                    <span class="session-detail-label">📅 Date:</span>
+                                    <span class="session-detail-value">{{ race_info.fp2_date|date:"D, M d, Y"|default:"N/A" }}</span>
+                                </div>
+                                <div class="session-detail-item">
+                                    <span class="session-detail-label">🕐 Time:</span>
+                                    <span class="session-detail-value">{{ race_info.fp2_time|time:"H:i"|default:"N/A" }} IRST</span>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- FP3 -->
+                    <div class="session-card {% if not race_info.fp3_date %}session-unavailable{% endif %}">
+                        <div class="session-header">
+                            <span class="session-icon">🏎️</span>
+                            <span class="session-name">Free Practice 3</span>
+                        </div>
+                        {% if race_info.fp3_date %}
+                            <div class="session-details">
+                                <div class="session-detail-item">
+                                    <span class="session-detail-label">📅 Date:</span>
+                                    <span class="session-detail-value">{{ race_info.fp3_date|date:"D, M d, Y"|default:"N/A" }}</span>
+                                </div>
+                                <div class="session-detail-item">
+                                    <span class="session-detail-label">🕐 Time:</span>
+                                    <span class="session-detail-value">{{ race_info.fp3_time|time:"H:i"|default:"N/A" }} IRST</span>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+
+                <!-- Sprint Qualifying (if available) -->
+                {% if race_info|has_sprint%}
+                    <div class="session-card">
+                        <div class="session-header">
+                            <span class="session-icon">⚡</span>
+                            <span class="session-name">Sprint Qualifying</span>
+                        </div>
+                        <div class="session-details">
+                            <div class="session-detail-item">
+                                <span class="session-detail-label">📅 Date:</span>
+                                <span class="session-detail-value">{{ race_info.sprint_quali_date|date:"D, M d, Y"|default:"N/A" }}</span>
+                            </div>
+                            <div class="session-detail-item">
+                                <span class="session-detail-label">🕐 Time:</span>
+                                <span class="session-detail-value">{{ race_info.sprint_quali_time|time:"H:i"|default:"N/A" }} IRST</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <!-- Qualifying -->
+                <div class="session-card">
+                    <div class="session-header">
+                        <span class="session-icon">⏱️</span>
+                        <span class="session-name">Qualifying</span>
+                    </div>
+                    <div class="session-details">
+                        <div class="session-detail-item">
+                            <span class="session-detail-label">📅 Date:</span>
+                            <span class="session-detail-value">{{ race_info.quali_date|date:"D, M d, Y"|default:"N/A" }}</span>
+                        </div>
+                        <div class="session-detail-item">
+                            <span class="session-detail-label">🕐 Time:</span>
+                            <span class="session-detail-value">{{ race_info.quali_time|time:"H:i"|default:"N/A" }} IRST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sprint Race (if available) -->
+                {% if race_info|has_sprint %}
+                    <div class="session-card">
+                        <div class="session-header">
+                            <span class="session-icon">⚡</span>
+                            <span class="session-name">Sprint Race</span>
+                        </div>
+                        <div class="session-details">
+                            <div class="session-detail-item">
+                                <span class="session-detail-label">📅 Date:</span>
+                                <span class="session-detail-value">{{ race_info.sprint_race_date|date:"D, M d, Y"|default:"N/A" }}</span>
+                            </div>
+                            <div class="session-detail-item">
+                                <span class="session-detail-label">🕐 Time:</span>
+                                <span class="session-detail-value">{{ race_info.sprint_race_time|time:"H:i"|default:"N/A" }} IRST</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <!-- Race -->
+                <div class="session-card">
+                    <div class="session-header">
+                        <span class="session-icon">🏁</span>
+                        <span class="session-name">Race</span>
+                    </div>
+                    <div class="session-details">
+                        <div class="session-detail-item">
+                            <span class="session-detail-label">📅 Date:</span>
+                            <span class="session-detail-value">{{ race_info.race_date|date:"D, M d, Y"|default:"N/A" }}</span>
+                        </div>
+                        <div class="session-detail-item">
+                            <span class="session-detail-label">🕐 Time:</span>
+                            <span class="session-detail-value">{{ race_info.race_time|time:"H:i"|default:"N/A" }} IRST</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% if race_results %}
+        <!-- Podium Section -->
+            <div class="podium-section">
+                {% if race_results.0 %}
+                    <div class="podium-card">
+                        <div class="podium-position">🥇</div>
+                        <div class="podium-driver">{{ race_results.0.driver_id }}</div>
+                        <div class="podium-team">{{ race_results.0.constructor_id }}</div>
+                    </div>
+                {% endif %}
+                
+                {% if race_results.1 %}
+                    <div class="podium-card">
+                        <div class="podium-position">🥈</div>
+                        <div class="podium-driver">{{ race_results.1.driver_id }}</div>
+                        <div class="podium-team">{{ race_results.1.constructor_id }}</div>
+                    </div>
+                {% endif %}
+                
+                {% if race_results.2 %}
+                    <div class="podium-card">
+                        <div class="podium-position">🥉</div>
+                        <div class="podium-driver">{{ race_results.2.driver_id }}</div>
+                        <div class="podium-team">{{ race_results.2.constructor_id}}</div>
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Results Table -->
+            <div class="results-section">
+                <h2 class="section-title">Race Results</h2>
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Driver</th>
+                            <th>Team</th>
+                            <th>Grid</th>
+                            <th>Laps</th>
+                            <th>Time</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for result in race_results %}
+                            <tr class="position-{{ result.final_position }}">
+                                <td class="position-cell">
+                                    <span class="position-badge">{{ result.final_position }}</span>
+                                </td>
+                                <td class="driver-cell">{{ result.driver_id }}</td>
+                                <td class="team-cell">{{ result.constructor_id }}</td>
+                                <td class="grid-cell">{{ result.starting_grid_position }}</td>
+                                <td class="laps-cell">{{ result.laps }}</td>
+                                <td class="time-cell">
+                                    {% if result.time %}
+                                        {{ result.time }}
+                                    {% elif result.final_position == 'DNQ' or result.final_position == 'DNF' or result.final_position == 'DNS' or result.final_position == 'NC' or result.final_position == 'EX' %}
+                                        <span class="status-dnf">{{ result.final_position }}</span>
+                                    {% else %}
+                                        <span class="status-dnf">N/A</span>
+                                    {% endif %}
+                                </td>
+                                <td class="points-cell">{{ result.points }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+        <div class="no-results">
+            <div class="no-results-icon">🏁</div>
+            <h2>No Results Available</h2>
+            <p>Race results have not been published yet</p>
+        </div>
+        {% endif %}
+    </div>
+{% endblock content %}

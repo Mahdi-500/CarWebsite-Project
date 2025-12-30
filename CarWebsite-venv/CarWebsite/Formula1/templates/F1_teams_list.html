@@ -1,0 +1,195 @@
+{% extends 'F1_base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+{% block title %}F1 Teams | Formula 1{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'F1_teams_list.css' %}">
+    <div class="teams-container">
+        <a href="{% url 'Formula1:main' %}" class="back-button">Back to Home</a>
+        
+        <div class="page-header">
+            <h1 class="page-title">🏁 F1 Teams</h1>
+            <p class="page-subtitle">Formula 1 constructor teams throughout history</p>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number">{{ total_teams }}</div>
+                <div class="stat-label">Total Teams</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ total_nationalities }}</div>
+                <div class="stat-label">Nationalities</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ active_teams }}</div>
+                <div class="stat-label">Active Teams</div>
+            </div>
+        </div>
+
+        <!-- Search form -->
+        <div class="filter-section">
+            <form method="get" class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" 
+                        name="search" 
+                        class="search-input" 
+                        value="{{ search_query }}"
+                        placeholder="Search teams (all records)..."
+                        autofocus>
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+
+        <!-- Teams Grid -->
+        {% if all_teams %}
+            <div class="teams-grid" id="teamsGrid">
+                {% for team in all_teams %}
+                    <div class="team-card" data-search="{{ team.name|lower }} {{ team.nationality|lower }}">
+                        <div class="team-header">
+                            <div class="team-icon">🏎️</div>
+                            <div class="team-name-section">
+                                {% comment %} <a href="" class="team-name">
+                                    {{ team.name }}
+                                </a> {% endcomment %}
+                                <span class="team-name">
+                                    {{ team.name }}
+                                </span>
+                                <div class="team-nationality">
+                                    <span>🌍</span>
+                                    <span>{{ team.nationality }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {% race_career team.constructor_id as race %}
+                        <div class="team-period">
+                            <div class="period-label">Active Period</div>
+                            <div class="period-years">
+                                {{race.0}} - {{ race.1 }}
+                            </div>
+                        </div>
+
+                        <div class="team-info">
+                            <div class="team-info-item">
+                                <div class="info-label">
+                                    <span class="info-icon">🏁</span>
+                                    <span>First Race</span>
+                                </div>
+                                <div class="info-value">{{ race.0 }}</div>
+                            </div>
+                            <div class="team-info-item">
+                                <div class="info-label">
+                                    <span class="info-icon">🎯</span>
+                                    <span>Last Race</span>
+                                </div>
+                                <div class="info-value">
+                                    {% if team.is_active %}
+                                        <span style="color: #4CAF50;">Active</span>
+                                    {% else %}
+                                        {{ race.1 }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="team-info-item">
+                                <div class="info-label">
+                                    <span class="info-icon">📊</span>
+                                    <span>Total Seasons</span>
+                                </div>
+                                <div class="info-value">{% total_season race.0 race.1 %}</div>
+                            </div>
+                        </div>
+
+                        {% comment %} <a href="{% url 'team_detail' team.id %}" class="team-link">
+                            View Details →
+                        </a> {% endcomment %}
+                    </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="no-teams">
+                <div class="no-teams-icon">🏁</div>
+                <h2>No Teams Available</h2>
+                <p>Check back later for team information</p>
+            </div>
+        {% endif %}
+
+        <!-- ====================== -->
+        <!--   PAGINATION CONTROLS  -->
+        <!-- ====================== -->
+        <div class="pagination">
+            {% if all_teams.has_previous %}
+                <a href="?page=1{% if search_query %}&search={{ search_query|urlencode }}{% endif %}" class="page-link">« First</a>
+                <a href="?page={{ all_teams.previous_page_number }}{% if search_query %}&search={{ search_query|urlencode }}{% endif %}" 
+                class="page-link">← Prev</a>
+            {% endif %}
+
+            <span class="current-page">
+                Page {{ all_teams.number }} of {{ all_teams.paginator.num_pages }}
+            </span>
+
+            {% if all_teams.has_next %}
+                <a href="?page={{ all_teams.next_page_number }}{% if search_query %}&search={{ search_query|urlencode }}{% endif %}" 
+                class="page-link">Next →</a>
+                <a href="?page={{ all_teams.paginator.num_pages }}{% if search_query %}&search={{ search_query|urlencode }}{% endif %}" 
+                class="page-link">Last »</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('teamSearch');
+            const teamCards = document.querySelectorAll('.team-card');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+
+                teamCards.forEach(card => {
+                    const searchData = card.getAttribute('data-search');
+                    
+                    if (searchData.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        // Add fade-in animation
+                        card.style.animation = 'none';
+                        setTimeout(() => {
+                            card.style.animation = 'fadeIn 0.3s ease';
+                        }, 10);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show "no results" message if no cards are visible
+                const visibleCards = Array.from(teamCards).filter(card => card.style.display !== 'none');
+                const grid = document.getElementById('teamsGrid');
+                let noResultsMsg = document.getElementById('noResultsMsg');
+
+                if (visibleCards.length === 0 && searchTerm !== '') {
+                    if (!noResultsMsg) {
+                        noResultsMsg = document.createElement('div');
+                        noResultsMsg.id = 'noResultsMsg';
+                        noResultsMsg.className = 'no-teams';
+                        noResultsMsg.innerHTML = `
+                            <div class="no-teams-icon">🔍</div>
+                            <h2>No Teams Found</h2>
+                            <p>Try searching with different keywords</p>
+                        `;
+                        grid.parentNode.appendChild(noResultsMsg);
+                    }
+                    grid.style.display = 'none';
+                } else {
+                    if (noResultsMsg) {
+                        noResultsMsg.remove();
+                    }
+                    grid.style.display = 'grid';
+                }
+            });
+        });
+    </script>
+{% endblock %}

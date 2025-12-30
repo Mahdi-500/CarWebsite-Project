@@ -1,0 +1,9 @@
+{% extends "F1_base.html" %}
+
+{% block title %}search result{% endblock title %}
+
+{% block content %}
+    {% for i in data %}
+        {{i.winner_name}}
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,312 @@
+{% extends 'F1_base.html' %}
+{% comment %} {% extends 'F1_base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+{% block title %}F1 Drivers | Formula 1{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'F1_driver_list.css' %}">
+    <div class="drivers-container">
+        <a href="{% url 'Formula1:main' %}" class="back-button">Back to Home</a>
+        
+        <div class="page-header">
+            <h1 class="page-title">🏎️ F1 Drivers</h1>
+            <p class="page-subtitle">Current Formula 1 racing drivers</p>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number">{{ total_drivers }}</div>
+                <div class="stat-label">Total Drivers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ total_nationalities }}</div>
+                <div class="stat-label">Nationalities</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ total_teams }}</div>
+                <div class="stat-label">Teams</div>
+            </div>
+        </div>
+
+        <!-- Search Section -->
+        <div class="filter-section">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" 
+                    class="search-input" 
+                    id="driverSearch" 
+                    placeholder="Search by driver name, number, or nationality...">
+            </div>
+        </div>
+
+        <!-- Drivers Grid -->
+        {% team_added as all_driver%}
+        {% if all_drivers %}
+            <div class="drivers-grid" id="driversGrid">
+                {% for driver in all_drivers %}
+                <div class="driver-card" data-search="{{ driver.first_name|lower }} {{ driver.last_name|lower }} {{ driver.number }} {{ driver.nationality|lower }}">
+                    <div class="driver-header">
+                        <div class="driver-number">{{ driver.number }}</div>
+                        <div class="driver-name-section">
+                            <a href="{% url 'Formula1:driver_details' driver.driver_id %}" class="driver-name">
+                                {{ driver.first_name }} {{ driver.last_name }}
+                            </a>
+                            <div class="driver-team">{{ driver.last_team|default:"No Team" }} (latest team)</div>
+                        </div>
+                    </div>
+
+                    <div class="driver-info">
+                        <div class="driver-info-item">
+                            <div class="info-label">
+                                <span class="info-icon">🎂</span>
+                                <span>Date of Birth</span>
+                            </div>
+                            <div class="info-value">{{ driver.date_of_birth|date:"M d, Y" }}</div>
+                        </div>
+                        <div class="driver-info-item">
+                            <div class="info-label">
+                                <span class="info-icon">🌍</span>
+                                <span>Nationality</span>
+                            </div>
+                            <div class="info-value">{{ driver.nationality }}</div>
+                        </div>
+                        <div class="driver-info-item">
+                            <div class="info-label">
+                                <span class="info-icon">🎯</span>
+                                <span>Driver Number</span>
+                            </div>
+                            <div class="info-value">#{{ driver.number }}</div>
+                        </div>
+                    </div>
+
+                    <a href="{% url 'Formula1:driver_details' driver.driver_id %}" class="driver-link">
+                        View Profile →
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="no-drivers">
+                <div class="no-drivers-icon">🏎️</div>
+                <h2>No Drivers Available</h2>
+                <p>Check back later for driver information</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('driverSearch');
+            const driverCards = document.querySelectorAll('.driver-card');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+
+                driverCards.forEach(card => {
+                    const searchData = card.getAttribute('data-search');
+                    
+                    if (searchData.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        // Add fade-in animation
+                        card.style.animation = 'none';
+                        setTimeout(() => {
+                            card.style.animation = 'fadeIn 0.3s ease';
+                        }, 10);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show "no results" message if no cards are visible
+                const visibleCards = Array.from(driverCards).filter(card => card.style.display !== 'none');
+                const grid = document.getElementById('driversGrid');
+                let noResultsMsg = document.getElementById('noResultsMsg');
+
+                if (visibleCards.length === 0 && searchTerm !== '') {
+                    if (!noResultsMsg) {
+                        noResultsMsg = document.createElement('div');
+                        noResultsMsg.id = 'noResultsMsg';
+                        noResultsMsg.className = 'no-drivers';
+                        noResultsMsg.innerHTML = `
+                            <div class="no-drivers-icon">🔍</div>
+                            <h2>No Drivers Found</h2>
+                            <p>Try searching with different keywords</p>
+                        `;
+                        grid.parentNode.appendChild(noResultsMsg);
+                    }
+                    grid.style.display = 'none';
+                } else {
+                    if (noResultsMsg) {
+                        noResultsMsg.remove();
+                    }
+                    grid.style.display = 'grid';
+                }
+            });
+        });
+    </script>
+{% endblock %} {% endcomment %}
+
+{% load static %}
+
+{% block title %}F1 Drivers | Formula 1{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'F1_driver_list.css' %}">
+
+    <div class="drivers-container">
+        <a href="{% url 'Formula1:main' %}" class="back-button">Back to Home</a>
+        
+        <div class="page-header">
+            <h1 class="page-title">🏎️ F1 Drivers</h1>
+            <p class="page-subtitle">Current Formula 1 racing drivers</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number">{{ total_drivers }}</div>
+                <div class="stat-label">Total Drivers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ total_nationalities }}</div>
+                <div class="stat-label">Nationalities</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ total_teams }}</div>
+                <div class="stat-label">Teams</div>
+            </div>
+        </div>
+
+        <!-- Search form -->
+        <div class="filter-section">
+            <form method="get" class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" 
+                        name="search" 
+                        class="search-input" 
+                        value="{{ search_query }}"
+                        placeholder="Search drivers (all records)..."
+                        autofocus>
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+
+        <!-- Drivers Grid -->
+        {% if all_drivers %}
+            <div class="drivers-grid" id="driversGrid">
+                {% for driver in all_drivers %}
+                <div class="driver-card" data-search="{{ driver.first_name|lower }} {{ driver.last_name|lower }} {{ driver.number }} {{ driver.nationality|lower }}">
+                    <!-- same card content as before -->
+                    <div class="driver-header">
+                        <div class="driver-number">{{ driver.number }}</div>
+                        <div class="driver-name-section">
+                            <a href="{% url 'Formula1:driver_details' driver.driver_id %}" class="driver-name">
+                                {{ driver.first_name }} {{ driver.last_name }}
+                            </a>
+                            <div class="driver-team">{{ driver.last_team|default:"No Team" }} (latest)</div>
+                        </div>
+                    </div>
+
+                    <div class="driver-info">
+                        <div class="driver-info-item">
+                            <div class="info-label"><span class="info-icon">🎂</span><span>Date of Birth</span></div>
+                            <div class="info-value">{{ driver.date_of_birth|date:"M d, Y" }}</div>
+                        </div>
+                        <div class="driver-info-item">
+                            <div class="info-label"><span class="info-icon">🌍</span><span>Nationality</span></div>
+                            <div class="info-value">{{ driver.nationality }}</div>
+                        </div>
+                        <div class="driver-info-item">
+                            <div class="info-label"><span class="info-icon">🎯</span><span>Driver Number</span></div>
+                            <div class="info-value">#{{ driver.number }}</div>
+                        </div>
+                    </div>
+
+                    <a href="{% url 'Formula1:driver_details' driver.driver_id %}" class="driver-link">
+                        View Profile →
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- ====================== -->
+            <!--   PAGINATION CONTROLS  -->
+            <!-- ====================== -->
+            <div class="pagination">
+                {% if all_drivers.has_previous %}
+                    <a href="?page=1{% if search_query %}&search={{ search_query|urlencode }}{% endif %}" class="page-link">« First</a>
+                    <a href="?page={{ all_drivers.previous_page_number }}{% if search_query %}&search={{ search_query|urlencode }}{% endif %}" 
+                    class="page-link">← Prev</a>
+                {% endif %}
+
+                <span class="current-page">
+                    Page {{ all_drivers.number }} of {{ all_drivers.paginator.num_pages }}
+                </span>
+
+                {% if all_drivers.has_next %}
+                    <a href="?page={{ all_drivers.next_page_number }}{% if search_query %}&search={{ search_query|urlencode }}{% endif %}" 
+                    class="page-link">Next →</a>
+                    <a href="?page={{ all_drivers.paginator.num_pages }}{% if search_query %}&search={{ search_query|urlencode }}{% endif %}" 
+                    class="page-link">Last »</a>
+                {% endif %}
+            </div>
+
+        {% elif search_query %}
+            <div class="no-drivers">
+                <div class="no-drivers-icon">🔍</div>
+                <h2>No drivers found for "{{ search_query }}"</h2>
+                <p>Try different keywords</p>
+            </div>
+        {% else %}
+        <div class="no-drivers">
+            <div class="no-drivers-icon">🏎️</div>
+            <h2>No Drivers Available</h2>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Client-side search still works (filters only current page)
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('driverSearch');
+    const driverCards = document.querySelectorAll('.driver-card');
+
+    searchInput.addEventListener('input', function() {
+        const term = this.value.toLowerCase().trim();
+
+        driverCards.forEach(card => {
+            const data = card.getAttribute('data-search') || '';
+            card.style.display = data.includes(term) ? 'block' : 'none';
+        });
+
+        // Optional: show/hide no results message for current page
+        const visible = Array.from(driverCards).filter(c => c.style.display !== 'none');
+        const grid = document.getElementById('driversGrid');
+        let msg = document.getElementById('noResultsMsg');
+
+        if (visible.length === 0 && term !== '') {
+            if (!msg) {
+                msg = document.createElement('div');
+                msg.id = 'noResultsMsg';
+                msg.className = 'no-drivers';
+                msg.innerHTML = `<div class="no-drivers-icon">🔍</div>
+                                <h2>No matches on this page</h2>
+                                <p>Try another page or different keywords</p>`;
+                grid.parentNode.insertBefore(msg, grid.nextSibling);
+            }
+            grid.style.display = 'none';
+        } else {
+            if (msg) msg.remove();
+            grid.style.display = 'grid';
+        }
+    });
+});
+</script>
+{% endblock %}

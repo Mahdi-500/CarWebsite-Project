@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}F1 Information Hub{% endblock %}
+    </title>
+</head>
+<body>
+    <link rel="stylesheet" href="{% static 'F1_base.css' %}">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <a href="{% url 'Formula1:main' %}" class="logo-link">
+                    <img src="{% static 'images/F1_logo.jpg' %}" alt="Formula 1" class="f1-logo">
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobileToggle">☰</button>
+
+            <!-- Navigation Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="{% url 'Formula1:main' %}" class="nav-link {% if request.resolver_match.url_name == 'main' %}active{% endif %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'Formula1:circuit_list' %}" class="nav-link {% if 'circuits' in request.path %}active{% endif %}">Circuits</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'Formula1:races_list' %}" class="nav-link {% if 'races' in request.path %}active{% endif %}">Races</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'Formula1:drivers_list' %}" class="nav-link {% if 'drivers' in request.path %}active{% endif %}">Drivers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'Formula1:teams_list' %}" class="nav-link {% if 'teams' in request.path %}active{% endif %}">Teams</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}
+        <!-- Page content goes here -->
+        {% endblock %}
+    </main>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    
+                    // Change icon
+                    if (navMenu.classList.contains('active')) {
+                        mobileToggle.textContent = '✕';
+                    } else {
+                        mobileToggle.textContent = '☰';
+                    }
+                });
+
+                // Close menu when clicking on a link
+                const navLinks = navMenu.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        mobileToggle.textContent = '☰';
+                    });
+                });
+            }
+        });
+    </script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

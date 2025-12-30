@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Race Finder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #e10600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ccc;
+            font-weight: 300;
+        }
+
+        .search-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #e10600;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input, select {
+            padding: 14px 16px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #e10600;
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.1);
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        select option {
+            background: #1a1a2e;
+            color: #fff;
+        }
+
+        .button-group {
+            grid-column: 1 / -1;
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-search {
+            background: linear-gradient(135deg, #e10600 0%, #c00500 100%);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(225, 6, 0, 0.4);
+        }
+
+        .btn-search:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(225, 6, 0, 0.6);
+        }
+
+        .btn-clear {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-clear:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .results-section {
+            min-height: 200px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid #e10600;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(225, 6, 0, 0.3);
+            border-color: rgba(225, 6, 0, 0.5);
+        }
+
+        .result-card h3 {
+            color: #e10600;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(225, 6, 0, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .result-info {
+            display: grid;
+            gap: 10px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-label {
+            color: #aaa;
+            font-weight: 600;
+        }
+
+        .info-value {
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 80px 20px;
+            color: #aaa;
+        }
+
+        .no-results-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 992px) {
+            .search-form {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .search-section {
+                padding: 25px;
+            }
+
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏎️ F1 Race Finder</h1>
+            <p class="subtitle">Search Formula 1 races by circuit, driver, team and more</p>
+        </header>
+
+        <section class="search-section">
+            <form class="search-form" id="searchForm">
+                <div class="form-group">
+                    <label for="continent">🌍 Continent</label>
+                    <select id="continent" name="continent">
+                        <option value="">All Continents</option>
+                        <option value="europe">Europe</option>
+                        <option value="asia">Asia</option>
+                        <option value="americas">Americas</option>
+                        <option value="oceania">Oceania</option>
+                        <option value="africa">Africa</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="grandprix">🏆 Grand Prix</label>
+                    <input type="text" id="grandprix" name="grandprix" placeholder="e.g., Monaco">
+                </div>
+
+                <div class="form-group">
+                    <label for="circuit">🏁 Circuit</label>
+                    <input type="text" id="circuit" name="circuit" placeholder="e.g., Silverstone">
+                </div>
+
+                <div class="form-group">
+                    <label for="firstname">👤 Driver First Name</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="e.g., Lewis">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname">👤 Driver Last Name</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="e.g., Hamilton">
+                </div>
+
+                <div class="form-group">
+                    <label for="team">🏢 Team</label>
+                    <input type="text" id="team" name="team" placeholder="e.g., Mercedes">
+                </div>
+
+                <div class="form-group">
+                    <label for="year">📅 Year</label>
+                    <input type="number" id="year" name="year" placeholder="e.g., 2024" min="1950" max="2024">
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn-search">🔍 Search Races</button>
+                    <button type="button" class="btn-clear" id="clearBtn">✖ Clear Filters</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="results-section">
+            <div class="loading hidden" id="loading">
+                <div class="spinner"></div>
+                <p>Searching F1 races...</p>
+            </div>
+
+            <div class="no-results hidden" id="noResults">
+                <div class="no-results-icon">🏁</div>
+                <h2>No races found</h2>
+                <p>Try adjusting your search filters</p>
+            </div>
+
+            <div class="results-grid" id="results"></div>
+        </section>
+    </div>
+
+    <script>
+        const form = document.getElementById('searchForm');
+        const clearBtn = document.getElementById('clearBtn');
+        const loading = document.getElementById('loading');
+        const noResults = document.getElementById('noResults');
+        const resultsContainer = document.getElementById('results');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleSearch();
+        });
+
+        clearBtn.addEventListener('click', function() {
+            form.reset();
+            resultsContainer.innerHTML = '';
+            noResults.classList.add('hidden');
+        });
+
+        async function handleSearch() {
+            const formData = new FormData(form);
+            const params = new URLSearchParams();
+
+            for (let [key, value] of formData.entries()) {
+                if (value.trim()) {
+                    params.append(key, value);
+                }
+            }
+
+            showLoading(true);
+            resultsContainer.innerHTML = '';
+            noResults.classList.add('hidden');
+
+            try {
+                const searchUrl = `/api/F1?${params.toString()}`;
+                console.log('Fetching from:', searchUrl);
+                
+                const response = await fetch(searchUrl);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Adjust based on your API response structure
+                // If your API returns { results: [...] }
+                const results = data.results || data;
+                
+                displayResults(results);
+            } catch (error) {
+                console.error('Error fetching F1 data:', error);
+                showError(error.message);
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        function showLoading(show) {
+            loading.classList.toggle('hidden', !show);
+        }
+
+        function showError(message) {
+            resultsContainer.innerHTML = `
+                <div style="text-align: center; padding: 40px; color: #e10600;">
+                    <h2>⚠️ Error</h2>
+                    <p>${message}</p>
+                    <p style="color: #aaa; margin-top: 10px;">Please check your connection and try again</p>
+                </div>
+            `;
+        }
+
+        function displayResults(results) {
+            if (!results || results.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            resultsContainer.innerHTML = results.map(result => `
+                <div class="result-card">
+                    <h3>${result.grandprix || result.grand_prix || 'Unknown Grand Prix'}</h3>
+                    <div class="result-info">
+                        <div class="info-row">
+                            <span class="info-label">Circuit:</span>
+                            <span class="info-value">${result.circuit || 'N/A'}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Year:</span>
+                            <span class="info-value">${result.year || 'N/A'}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Driver:</span>
+                            <span class="info-value">${(result.winner_first_name && result.winner_last_name ? `${result.winner_first_name} ${result.winner_last_name}` : 'N/A')}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Team:</span>
+                            <span class="info-value">${result.team || 'N/A'}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Continent:</span>
+                            <span class="info-value">${result.continent || 'N/A'}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Remove mock data generator when using real API
+        // function generateMockResults(params) { ... }
+    </script>
+</body>
+</html>

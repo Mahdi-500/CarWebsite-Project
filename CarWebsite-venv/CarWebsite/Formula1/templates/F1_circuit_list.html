@@ -1,0 +1,53 @@
+{% extends "F1_base.html" %}
+{% load static %}
+
+
+{% block title %}F1 Circuits | Formula 1{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'F1_circuit_list.css' %}">
+    <div class="container">
+        <a href="{% url 'Formula1:main' %}" class="back-button">← Back to Home</a>
+        
+        <header>
+            <h1>🏁 F1 Circuits</h1>
+            <p class="subtitle">Explore all Formula 1 racing circuits around the world</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">{{total_circuits}}</div>
+                <div class="stat-label">Total Circuits</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">{{ total_counteries }}</div>
+                <div class="stat-label">Countries</div>
+            </div>
+        </div>
+
+        {% if all_circuits %}
+        <div class="circuits-grid">
+            {% for circuit in all_circuits %}
+                <div class="circuit-card">
+                    <a href="" class="circuit-name">
+                        {{ circuit.name }}
+                    </a>
+                    <div class="circuit-country">
+                        <span class="country-flag">🏴</span>
+                        <span>{{ circuit.country }}</span>
+                    </div>
+                    <a href="{% url 'Formula1:circuit_details' circuit.circuit_id %}" class="circuit-link">
+                        View Details →
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="no-circuits">
+            <div class="no-circuits-icon">🏁</div>
+            <h2>No circuits available</h2>
+            <p>Check back later for circuit information</p>
+        </div>
+        {% endif %}
+    </div>
+{% endblock content %}

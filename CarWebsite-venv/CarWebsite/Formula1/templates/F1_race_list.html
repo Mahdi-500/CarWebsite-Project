@@ -1,0 +1,170 @@
+{% extends 'F1_base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+{% block title %}F1 Races | Formula 1{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'F1_race_list.css' %}">
+    <div class="races-container">
+        <a href="{% url 'Formula1:main' %}" class="back-button">Back to Home</a>
+        
+        <div class="page-header">
+            <h1 class="page-title">🏁 F1 Races</h1>
+            <p class="page-subtitle">Complete Formula 1 race calendar and results</p>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number">{{total_races}}</div>
+                <div class="stat-label">Total Races</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ total_years }}</div>
+                <div class="stat-label">Seasons</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{total_circuits}}</div>
+                <div class="stat-label">Circuits</div>
+            </div>
+        </div>
+
+        <!-- Year Filter -->
+        <div class="filter-section">
+            <div class="filter-container">
+                <span class="filter-label">📅 Season:</span>
+                <div class="year-dropdown">
+                    <select class="dropdown-select" id="yearDropdown">
+                        <option value="all">All Seasons</option>
+                        {% for year in races_per_year.keys %}
+                            <option value="{{ year }}" {% if year == latest_year %}selected{% endif %}>{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                    <span class="dropdown-icon">▼</span>
+                </div>
+            </div>
+        </div>
+
+        {% comment %} <div class="year-filter-wrapper">
+            <span class="filter-icon">🏆</span>
+
+            <select id="yearDropdown" class="year-dropdown">
+                <option value="all">All Seasons</option>
+                {% for year in races_per_year.keys %}
+                    <option value="{{ year }}" {% if year == latest_year %}selected{% endif %}>
+                        {{ year }} Season
+                    </option>
+                {% endfor %}
+            </select>
+
+            <span class="dropdown-arrow">▼</span>
+        </div> {% endcomment %}
+
+
+        <!-- Races by Year -->
+        {% if races_per_year %}
+            {% for year, races in races_per_year.items %}
+                <div class="year-section" data-year="{{ year }}">
+                    <div class="year-header">
+                        <h2 class="year-title">{{ year }} Season</h2>
+                        <span class="year-count">{{ races|length }} Race{{ races|length|pluralize }}</span>
+                    </div>
+
+                    <div class="races-grid">
+                        {% for race in races %}
+                            <div class="race-card">
+                                <span class="race-round">Round {{ race.2 }}</span>
+                                
+                                <a href="{% url 'Formula1:race_details' race.0 %}" class="race-name">
+                                    {{ race.1 }}
+                                </a>
+
+                                <div class="race-badges">
+                                    {% if race.0|has_sprint %}
+                                        <span class="race-badge badge-sprint">⚡ Sprint</span>
+                                    {% endif %}
+                                    {% if race.5|is_completed %}
+                                        <span class="race-badge badge-completed">✓ Completed</span>
+                                    {% else %}
+                                        <span class="race-badge badge-upcoming">◷ Upcoming</span>
+                                    {% endif %}
+                                </div>
+
+                                <div class="race-info">
+                                    <div class="race-info-item">
+                                        <span class="race-info-icon">🏁</span>
+                                        <span class="race-info-value">{{ race.6 }}</span>
+                                    </div>
+                                    <div class="race-info-item">
+                                        <span class="race-info-icon">🌍</span>
+                                        <span class="race-info-value">{{ race.7 }}</span>
+                                    </div>
+                                    <div class="race-info-item">
+                                        <span class="race-info-icon">📅</span>
+                                        <span class="race-info-value">{{ race.5|date:"F d, Y" }}</span>
+                                    </div>
+                                    <div class="race-info-item">
+                                        <span class="race-info-icon">🕐</span>
+                                        <span class="race-info-value">{{ race.4|time:"H:i" }} IRST</span>
+                                    </div>
+                                </div>
+
+                                <a href="{% url 'Formula1:race_details' race.0 %}"" class="race-link">
+                                    View Details →
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+        <div class="no-races">
+            <div class="no-races-icon">🏁</div>
+            <h2>No Races Available</h2>
+            <p>Check back later for race information</p>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdown = document.getElementById('yearDropdown');
+            const yearSections = document.querySelectorAll('.year-section');
+
+            dropdown.addEventListener('change', function () {
+                const selectedYear = this.value;
+
+                yearSections.forEach(section => {
+                    section.classList.remove('fade-in');
+
+                    if (selectedYear === 'all' || section.dataset.year === selectedYear) {
+                        section.classList.remove('hidden');
+                        // force animation restart
+                        void section.offsetWidth;
+                        section.classList.add('fade-in');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+
+                if (selectedYear !== 'all') {
+                    const target = document.querySelector(
+                        `.year-section[data-year="${selectedYear}"]`
+                    );
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdown = document.getElementById('yearDropdown');
+
+            // 🔥 Trigger filtering for the default selected year
+            dropdown.dispatchEvent(new Event('change'));
+        });
+    </script>
+{% endblock %}

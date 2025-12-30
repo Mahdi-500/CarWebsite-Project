@@ -1,0 +1,183 @@
+{% extends 'F1_base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+{% block title %}{{ driver.first_name }} {{ driver.last_name }} | F1 Driver{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'F1_driver_details.css' %}">
+    <div class="driver-container">
+        <a href="{% url 'Formula1:drivers_list' %}" class="back-button">Back to Drivers</a>
+        
+        <!-- Driver Header -->
+        <div class="driver-header">
+            <div class="driver-number-large">{{ driver.number }}</div>
+            <div class="driver-info-header">
+                <h1 class="driver-name-title">{{ driver.first_name }} {{ driver.last_name }}</h1>
+                <p class="driver-team-title">{{ last_team }} (latest team)</p>
+                
+                <div class="driver-meta">
+                    <div class="meta-item">
+                        <span class="meta-icon">🌍</span>
+                        <div class="meta-content">
+                            <span class="meta-label">Nationality</span>
+                            <span class="meta-value">{{ driver.nationality }}</span>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">🎂</span>
+                        <div class="meta-content">
+                            <span class="meta-label">Date of Birth</span>
+                            <span class="meta-value">{{ driver.date_of_birth|date:"M d, Y" }}</span>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">🎯</span>
+                        <div class="meta-content">
+                            <span class="meta-label">Driver Number</span>
+                            <span class="meta-value">#{{ driver.number }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career History -->
+        {% if career_history %}
+            <div class="career-section">
+                <h2 class="section-title">🏆 Career History</h2>
+                <div class="career-timeline">
+                    {% for name, year in career_history.items %}
+                    <div class="career-card">
+                        <div class="career-team">{{ name }}</div>
+                        <div class="career-years">{{ year }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        <!-- Season Filter -->
+        <div class="filter-section">
+            <div class="filter-container">
+                <span class="filter-label">📅 Season:</span>
+                <div class="year-dropdown">
+                    <select class="dropdown-select" id="seasonDropdown">
+                        <option value="all">All Seasons</option>
+                        {% for season in seasons %}
+                            <option value="{{ season }}" {% if forloop.first %}selected{% endif %}>{{ season }}</option>
+                        {% endfor %}
+                    </select>
+                    <span class="dropdown-icon">▼</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Race Results -->
+        <div class="results-section">
+            <h2 class="section-title">🏁 Race Results</h2>
+            
+            {% if results_by_season %}
+                {% for season, results in results_by_season.items %}
+                    <div class="season-results" data-season="{{ season }}">
+                        <h3 style="color: #e10600; margin-bottom: 20px; font-size: 1.5rem;">{{ season }} Season</h3>
+                        
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Race</th>
+                                    <th>Team</th>
+                                    <th style="text-align: center;">Grid</th>
+                                    <th style="text-align: center;">Position</th>
+                                    <th>Fastest Lap</th>
+                                    <th>Top Speed</th>
+                                    <th>Time</th>
+                                    <th style="text-align: center;">Laps</th>
+                                    <th style="text-align: center;">Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for result in results %}
+                                    {% time_calculator result.time result.race_id.race_id as time %}
+                                    <tr>
+                                        <td class="race-name-cell">{{ result.race_id.name }}</td>
+                                        <td>{{ result.constructor_id.name }}</td>
+                                        <td class="position-cell">{{ result.starting_grid }}</td>
+                                        <td class="position-cell">
+                                            <span class="position-badge position-{{ result.final_position }}">
+                                                {{ result.final_position }}
+                                            </span>
+                                        </td>
+                                        <td class="time-cell">{{ result.fastest_lap|default:"—" }}</td>
+                                        <td class="speed-cell">{{ result.top_speed_of_fl|default:"—" }}{% if result.top_speed_of_fl %} km/h{% endif %}</td>
+                                        <td class="time-cell">{{ time|default:"—" }}</td>
+                                        <td style="text-align: center;">{{ result.laps }}</td>
+                                        <td class="points-cell">{{ result.points }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endfor %}
+            {% else %}
+            <div class="no-results">
+                <div class="no-results-icon">🏁</div>
+                <h3>No Race Results Available</h3>
+                <p>This driver hasn't competed in any races yet</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const seasonDropdown = document.getElementById('seasonDropdown');
+            const seasonSections = document.querySelectorAll('.season-results');
+
+            // Function to filter seasons
+            function filterSeasons(selectedSeason) {
+                seasonSections.forEach(section => {
+                    const sectionSeason = section.getAttribute('data-season');
+                    
+                    if (selectedSeason === 'all') {
+                        section.style.display = 'block';
+                        section.style.animation = 'none';
+                        setTimeout(() => {
+                            section.style.animation = 'fadeIn 0.5s ease';
+                        }, 10);
+                    } else if (sectionSeason === selectedSeason) {
+                        section.style.display = 'block';
+                        section.style.animation = 'none';
+                        setTimeout(() => {
+                            section.style.animation = 'fadeIn 0.5s ease';
+                        }, 10);
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+
+            // Set initial state to show only latest season
+            const latestSeason = seasonDropdown.options[1]?.value; // First season after "All Seasons"
+            if (latestSeason) {
+                filterSeasons(latestSeason);
+            }
+
+            // Handle dropdown change
+            seasonDropdown.addEventListener('change', function() {
+                const selectedSeason = this.value;
+                filterSeasons(selectedSeason);
+
+                // Smooth scroll to results
+                setTimeout(() => {
+                    const firstVisible = document.querySelector('.season-results[style*="display: block"]');
+                    if (firstVisible && selectedSeason !== 'all') {
+                        firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            });
+        });
+    </script>
+{% endblock %}

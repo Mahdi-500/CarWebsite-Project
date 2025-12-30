@@ -1,0 +1,61 @@
+{% extends "F1_base.html" %}
+{% load static %}
+
+
+{% block title %}F1 | Home{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'F1_main.css' %}">
+
+{% comment %} <header class="f1-header">
+    <nav class="f1-nav">
+        <ul class="nav-links">
+            <li><a href="{% url 'Formula1:main' %}">Home</a></li>
+            <li><a href="">Races</a></li>
+            <li><a href="">Drivers</a></li>
+            <li><a href="">Constructors</a></li>
+            <li><a href="{% url 'Formula1:circuit_list' %}">Circuits</a></li>
+        </ul>
+    </nav>
+</header> {% endcomment %}
+
+<main class="f1-main">
+    <section class="welcome-section">
+        <h1>Welcome to Our F1 Website</h1>
+        <p>Your hub for Formula 1 races, drivers, teams, and circuits.</p>
+    </section>
+
+<section class="results-section">
+    <h2>Recent Season Results</h2>
+
+    <table class="results-table">
+        <thead>
+            <tr>
+                <th>Round</th>
+                <th>Grand Prix</th>
+                <th>Winner</th>
+                <th>Team</th>
+            </tr>
+        </thead>
+        <tbody>
+            {# Example loop – replace variable names as needed #}
+            {% for r in results %}
+                <tr>
+                    <td>{{ r.race_id.round }}</td>
+                    <td>{{ r.race_id.name }}</td>
+                    <td>{{ r.driver_id }}</td>
+                    <td>{{ r.constructor_id }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5" style="text-align:center;">No race data available</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</section>
+
+</main>
+
+{% endblock content %}

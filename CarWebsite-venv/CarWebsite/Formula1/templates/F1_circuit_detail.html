@@ -1,0 +1,188 @@
+{% extends "F1_base.html" %}
+{% load static %}
+
+{% block title %}{{ circuit_details.name }} | F1 Circuit Details{% endblock title %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'F1_circuit_details.css' %}">
+    <div class="container">
+        <a href="{% url 'Formula1:circuit_list' %}" class="back-button">← Back to Circuits lists</a>
+        
+        <div class="circuit-header">
+            <h1 class="circuit-title">{{ circuit_details.name }}</h1>
+            <div class="circuit-country">
+                <span class="country-flag">🏴</span>
+                <span>{{ circuit_details.country }}</span>
+            </div>
+        </div>
+
+        <div class="details-grid">
+            <div class="detail-card">
+                <span class="detail-icon">📍</span>
+                <div class="detail-label">Location</div>
+                <div class="detail-value">{{ circuit_details.location }}</div>
+            </div>
+
+            <div class="detail-card">
+                <span class="detail-icon">⛰️</span>
+                <div class="detail-label">Altitude</div>
+                <div class="detail-value">{{ circuit_details.altitude }}m</div>
+            </div>
+
+            {% comment %} <div class="detail-card">
+                <span class="detail-icon">🏁</span>
+                <div class="detail-label">Circuit Type</div>
+                <div class="detail-value">{{ circuit.circuit_type|default:"Race Circuit" }}</div>
+            </div> {% endcomment %}
+        </div>
+
+        <div class="map-section">
+            <h2 class="map-header">📍 Circuit Location</h2>
+            <div class="map-container">
+                <p style="color: #aaa; font-size: 1.1rem;">Circuit Coordinates</p>
+                
+                <div class="coordinates">
+                    <div class="coordinate-item">
+                        <div class="coordinate-label">Latitude</div>
+                        <div class="coordinate-value">{{ circuit_details.latitude }}°</div>
+                    </div>
+                    <div class="coordinate-item">
+                        <div class="coordinate-label">Longitude</div>
+                        <div class="coordinate-value">{{ circuit_details.longitude }}°</div>
+                    </div>
+                </div>
+
+                <a href="https://www.google.com/maps?q={{ circuit_details.latitude }},{{ circuit_details.longitude }}" 
+                target="_blank" 
+                class="map-link">
+                    🗺️ View on Google Maps
+                </a>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2 class="info-title">Circuit Information</h2>
+            <div class="info-grid">
+                <div class="info-row">
+                    <span class="info-label">Full Name:</span>
+                    <span class="info-value">{{ circuit_details.name }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Country:</span>
+                    <span class="info-value">{{ circuit_details.country }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Location:</span>
+                    <span class="info-value">{{ circuit_details.location }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Altitude:</span>
+                    <span class="info-value">{{ circuit_details.altitude }} meters above sea level</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Coordinates:</span>
+                    <span class="info-value">{{ circuit_details.latitude }}°, {{ circuit_details.longitude }}°</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="races-section">
+            <h2 class="races-title">
+                🏆 Races at {{ circuit_details.name }}
+                <span class="races-count"> {{total_races}} Race{{ total_races|length|pluralize }}</span>
+            </h2>
+            
+            <!-- Year Filter (Optional - can be implemented with JavaScript) -->
+            {% comment %} <div class="races-filter">
+                <button class="filter-btn active" data-year="all">All Years</button>
+                {% for i in circuit_race_info %}
+                <button class="filter-btn" data-year="{{ i.year }}">{{ i.year }}</button>
+                {% endfor %}
+            </div> {% endcomment %}
+            
+            {% if circuit_race_info %}
+                <div class="races-grid">
+                    {% for race in circuit_race_info %}
+                        <div class="race-card" data-year="{{ race.year }}">
+                            <div class="race-header-section">
+                                <a href="" class="race-name">
+                                    {{ race.name }}
+                                </a>
+                                <span class="race-year">{{ race.year }}</span>
+                            </div>
+                            
+                            <div class="race-badges">
+                                <span class="race-badge badge-round">Round {{ race.race_number }}</span>
+                                {% if race.sprint_race_date %}
+                                    <span class="race-badge badge-sprint">⚡ Sprint</span>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="race-meta">
+                                <div class="race-meta-item">
+                                    <span>📅</span>
+                                    <span class="race-meta-value">{{ race.race_date|date:"F d, Y" }}</span>
+                                </div>
+                                <div class="race-meta-item">
+                                    <span>🕐</span>
+                                    <span class="race-meta-value">{{ race.race_time|time:"H:i" }}</span>
+                                </div>
+                                <div class="race-meta-item">
+                                    <span>🌍</span>
+                                    <span class="race-meta-value">{{ race.circuit_id.country }}</span>
+                                </div>
+                            </div>
+                            
+                            {% for results in race.results.all %}
+                                {% if results.final_position == '1' %}
+                                    <div class="race-winner">
+                                        <div class="winner-label">🏆 Winner</div>
+                                        <div class="winner-name">{{ results.driver_id }}</div>
+                                        <div class="winner-team">{{ results.constructor_id }}</div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            
+                            <a href="{% url 'Formula1:circuit_race_detail' c_id race.race_id %}" class="race-link-btn">
+                                View Full Results →
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="no-races">
+                    <p>No races available for this circuit</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    {% comment %} <script>
+        // Year filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const raceCards = document.querySelectorAll('.race-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const selectedYear = this.getAttribute('data-year');
+                    
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter race cards
+                    raceCards.forEach(card => {
+                        const cardYear = card.getAttribute('data-year');
+                        if (selectedYear === 'all' || cardYear === selectedYear) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script> {% endcomment %}
+
+{% endblock content %}
