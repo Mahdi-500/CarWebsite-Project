@@ -1,0 +1,481 @@
+race_id,driver_id,constructor_id,car_number,starting_grid_position,final_position,points,laps,time,fastest_lap,top_speed_of_fl
+Australian Grand Prix,Lando Norris,McLaren,4,1,1,25,57,1:42:06.304,1:22.167,231.246
+Australian Grand Prix,Oscar Piastri,McLaren,81,2,9,2,57,+20.448s,1:23.242,228.259
+Australian Grand Prix,Max Verstappen,Red Bull Racing,1,3,2,18,57,+0.895s,1:23.081,228.702
+Australian Grand Prix,George Russell,Mercedes,63,4,3,15,57,+8.481s,1:25.065,223.368
+Australian Grand Prix,Yuki Tsunoda,Racing Bulls,22,5,12,0,57,+29.884s,1:24.194,225.678
+Australian Grand Prix,Alexander Albon,Williams,23,6,5,10,57,+12.773s,1:24.597,224.603
+Australian Grand Prix,Charles Leclerc,Ferrari,16,7,8,4,57,+19.826s,1:25.271,222.828
+Australian Grand Prix,Lewis Hamilton,Ferrari,44,8,10,1,57,+22.473s,1:24.218,225.614
+Australian Grand Prix,Pierre Gasly,Alpine,10,9,11,0,57,+26.502s,1:25.020,223.486
+Australian Grand Prix,Carlos Sainz,Williams,55,10,NC,0,0,DNF,,
+Australian Grand Prix,Isack Hadjar,Racing Bulls,6,11,NC,0,0,DNS,,
+Australian Grand Prix,Fernando Alonso,Aston Martin,14,12,NC,0,32,DNF,1:28.819,213.927
+Australian Grand Prix,Lance Stroll,Aston Martin,18,13,6,8,57,+17.413s,1:25.538,222.132
+Australian Grand Prix,Jack Doohan,Alpine,7,14,NC,0,0,DNF,,
+Australian Grand Prix,Gabriel Bortoleto,Kick Sauber,5,15,NC,0,45,DNF,1:24.192,225.684
+Australian Grand Prix,Kimi Antonelli,Mercedes,12,16,4,12,57,+10.135s,1:24.901,223.799
+Australian Grand Prix,Nico Hulkenberg,Kick Sauber,27,17,7,6,57,+18.423s,1:25.243,222.901
+Australian Grand Prix,Liam Lawson,Red Bull Racing,30,18,NC,0,46,DNF,1:22.970,229.008
+Australian Grand Prix,Esteban Ocon,Haas F1 Team,31,19,13,0,57,+33.161s,1:26.764,218.994
+Australian Grand Prix,Oliver Bearman,Haas F1 Team,87,20,14,0,57,+40.351s,1:27.603,216.896
+Bahrain Grand Prix,Oscar Piastri,McLaren,81,1,1,25,56,1:30:55.026,1:35.520,205.439
+Bahrain Grand Prix,George Russell,Mercedes,63,2,3,15,56,+11.097s,1:35.816,204.805
+Bahrain Grand Prix,Lando Norris,McLaren,4,3,2,18,56,+9.748s,1:35.454,205.581
+Bahrain Grand Prix,Max Verstappen,Red Bull Racing,1,4,4,12,56,+16.656s,1:35.488,205.508
+Bahrain Grand Prix,Lewis Hamilton,Ferrari,44,5,DQ,0,,DSQ,1:35.069,206.414
+Bahrain Grand Prix,Charles Leclerc,Ferrari,16,6,DQ,0,,DSQ,1:36.157,204.078
+Bahrain Grand Prix,Isack Hadjar,Racing Bulls,6,7,11,0,56,+78.875s,1:35.868,204.693
+Bahrain Grand Prix,Kimi Antonelli,Mercedes,12,8,6,8,56,+53.748s,1:36.046,204.314
+Bahrain Grand Prix,Yuki Tsunoda,Racing Bulls,22,9,16,0,55,+1 lap,1:35.871,204.687
+Bahrain Grand Prix,Alexander Albon,Williams,23,10,7,6,56,+56.321s,1:36.254,203.873
+Bahrain Grand Prix,Esteban Ocon,Haas F1 Team,31,11,5,10,56,+49.969s,1:35.740,204.967
+Bahrain Grand Prix,Nico Hulkenberg,Kick Sauber,27,12,15,0,55,+1 lap,1:37.275,201.733
+Bahrain Grand Prix,Fernando Alonso,Aston Martin,14,13,NC,0,4,DNF,1:39.256,197.706
+Bahrain Grand Prix,Lance Stroll,Aston Martin,18,14,9,2,56,+70.204s,1:36.044,204.318
+Bahrain Grand Prix,Carlos Sainz,Williams,55,15,10,1,56,+76.387s,1:36.779,202.767
+Bahrain Grand Prix,Pierre Gasly,Alpine,10,16,DQ,0,,DSQ,1:36.425,203.511
+Bahrain Grand Prix,Oliver Bearman,Haas F1 Team,87,17,8,4,56,+61.303s,1:36.363,203.642
+Bahrain Grand Prix,Jack Doohan,Alpine,7,18,13,0,56,+88.401s,1:36.424,203.513
+Bahrain Grand Prix,Gabriel Bortoleto,Kick Sauber,5,19,14,0,55,+1 lap,1:35.874,204.681
+Bahrain Grand Prix,Liam Lawson,Red Bull Racing,30,20,12,0,56,+81.147s,1:35.985,204.444
+Saudi Arabian Grand Prix,Max Verstappen,Red Bull Racing,1,1,1,25,53,1:22:06.983,1:31.041,229.624
+Saudi Arabian Grand Prix,Lando Norris,McLaren,4,2,2,18,53,+1.423s,1:31.116,229.435
+Saudi Arabian Grand Prix,Oscar Piastri,McLaren,81,3,3,15,53,+2.129s,1:31.039,229.629
+Saudi Arabian Grand Prix,Charles Leclerc,Ferrari,16,4,4,12,53,+16.097s,1:31.469,228.549
+Saudi Arabian Grand Prix,George Russell,Mercedes,63,5,5,10,53,+17.362s,1:31.357,228.829
+Saudi Arabian Grand Prix,Kimi Antonelli,Mercedes,12,6,6,8,53,+18.671s,1:30.965,229.815
+Saudi Arabian Grand Prix,Isack Hadjar,Racing Bulls,6,7,8,4,53,+37.134s,1:31.317,228.929
+Saudi Arabian Grand Prix,Lewis Hamilton,Ferrari,44,8,7,6,53,+29.182s,1:31.406,228.707
+Saudi Arabian Grand Prix,Alexander Albon,Williams,23,9,9,2,53,+40.367s,1:31.125,229.412
+Saudi Arabian Grand Prix,Oliver Bearman,Haas F1 Team,87,10,10,1,53,+54.529s,1:32.006,227.215
+Saudi Arabian Grand Prix,Pierre Gasly,Alpine,10,11,13,0,53,+62.122s,1:31.820,227.675
+Saudi Arabian Grand Prix,Fernando Alonso,Aston Martin,14,12,11,0,53,+57.333s,1:31.770,227.799
+Saudi Arabian Grand Prix,Liam Lawson,Racing Bulls,30,13,17,0,53,+82.734s,1:32.043,227.124
+Saudi Arabian Grand Prix,Yuki Tsunoda,Red Bull Racing,22,14,12,0,53,+58.401s,1:31.871,227.549
+Saudi Arabian Grand Prix,Carlos Sainz,Williams,55,15,14,0,53,+74.129s,1:31.106,229.460
+Saudi Arabian Grand Prix,Nico Hulkenberg,Kick Sauber,27,16,16,0,53,+81.957s,1:32.572,225.826
+Saudi Arabian Grand Prix,Gabriel Bortoleto,Kick Sauber,5,17,19,0,53,+83.897s,1:32.034,227.146
+Saudi Arabian Grand Prix,Esteban Ocon,Haas F1 Team,31,18,18,0,53,+83.438s,1:31.967,227.311
+Saudi Arabian Grand Prix,Jack Doohan,Alpine,7,19,15,0,53,+81.314s,1:32.685,225.551
+Saudi Arabian Grand Prix,Lance Stroll,Aston Martin,18,20,20,0,52,+1 lap,1:32.052,227.102
+Japanese Grand Prix,Oscar Piastri,McLaren,81,1,1,25,57,1:35:39.435,1:35.140,204.784
+Japanese Grand Prix,Charles Leclerc,Ferrari,16,2,4,12,57,+19.679s,1:36.132,202.671
+Japanese Grand Prix,George Russell,Mercedes,63,3,2,18,57,+15.499s,1:35.518,203.974
+Japanese Grand Prix,Pierre Gasly,Alpine,10,4,7,6,57,+36.002s,1:36.531,201.833
+Japanese Grand Prix,Kimi Antonelli,Mercedes,12,5,11,0,57,+48.016s,1:36.690,201.501
+Japanese Grand Prix,Lando Norris,McLaren,4,6,3,15,57,+16.273s,1:35.728,203.526
+Japanese Grand Prix,Max Verstappen,Red Bull Racing,1,7,6,8,57,+34.395s,1:36.167,202.597
+Japanese Grand Prix,Carlos Sainz,Williams,55,8,NC,0,45,DNF,1:36.954,200.953
+Japanese Grand Prix,Lewis Hamilton,Ferrari,44,9,5,10,57,+27.993s,1:36.235,202.454
+Japanese Grand Prix,Yuki Tsunoda,Red Bull Racing,22,10,9,2,57,+45.061s,1:37.225,200.392
+Japanese Grand Prix,Jack Doohan,Alpine,7,11,14,0,57,+57.806s,1:36.682,201.518
+Japanese Grand Prix,Isack Hadjar,Racing Bulls,6,12,13,0,57,+56.314s,1:36.952,200.957
+Japanese Grand Prix,Fernando Alonso,Aston Martin,14,13,15,0,57,+60.340s,1:37.906,198.999
+Japanese Grand Prix,Esteban Ocon,Haas F1 Team,31,14,8,4,57,+44.244s,1:37.098,200.655
+Japanese Grand Prix,Alexander Albon,Williams,23,15,12,0,57,+48.839s,1:37.141,200.566
+Japanese Grand Prix,Nico Hulkenberg,Kick Sauber,27,16,DQ,0,,DSQ,1:37.338,200.160
+Japanese Grand Prix,Liam Lawson,Racing Bulls,30,17,16,0,57,+64.435s,1:37.380,200.073
+Japanese Grand Prix,Gabriel Bortoleto,Kick Sauber,5,18,18,0,57,+66.872s,1:38.006,198.795
+Japanese Grand Prix,Lance Stroll,Aston Martin,18,19,17,0,57,+65.489s,1:38.064,198.678
+Japanese Grand Prix,Oliver Bearman,Haas F1 Team,87,20,10,1,57,+47.594s,1:37.303,200.232
+Chinese Grand Prix,Max Verstappen,Red Bull Racing,1,1,2,18,50,+2.843s,1:32.280,240.858
+Chinese Grand Prix,Oscar Piastri,McLaren,81,2,1,25,50,1:21:06.758,1:32.228,240.994
+Chinese Grand Prix,George Russell,Mercedes,63,3,5,10,50,+27.236s,1:32.893,239.268
+Chinese Grand Prix,Charles Leclerc,Ferrari,16,4,3,15,50,+8.104s,1:32.192,241.088
+Chinese Grand Prix,Kimi Antonelli,Mercedes,12,5,6,8,50,+34.688s,1:32.396,240.555
+Chinese Grand Prix,Carlos Sainz,Williams,55,6,8,4,50,+64.630s,1:32.466,240.373
+Chinese Grand Prix,Lewis Hamilton,Ferrari,44,7,7,6,50,+39.073s,1:32.600,240.025
+Chinese Grand Prix,Yuki Tsunoda,Red Bull Racing,22,8,NC,0,1,DNF,,
+Chinese Grand Prix,Pierre Gasly,Alpine,10,9,NC,0,0,DNF,,
+Chinese Grand Prix,Lando Norris,McLaren,4,10,4,12,50,+9.196s,1:31.778,242.175
+Chinese Grand Prix,Alexander Albon,Williams,23,11,9,2,50,+66.515s,1:33.477,237.773
+Chinese Grand Prix,Liam Lawson,Racing Bulls,30,12,12,0,50,+78.451s,1:32.998,238.998
+Chinese Grand Prix,Fernando Alonso,Aston Martin,14,13,11,0,50,+75.917s,1:33.009,238.970
+Chinese Grand Prix,Isack Hadjar,Racing Bulls,6,14,10,1,50,+67.091s,1:33.257,238.334
+Chinese Grand Prix,Oliver Bearman,Haas F1 Team,87,15,13,0,50,+79.194s,1:33.238,238.383
+Chinese Grand Prix,Lance Stroll,Aston Martin,18,16,16,0,49,+1 lap,1:32.745,239.650
+Chinese Grand Prix,Jack Doohan,Alpine,7,17,17,0,49,+1 lap,1:33.150,238.608
+Chinese Grand Prix,Nico Hulkenberg,Kick Sauber,27,18,15,0,49,+1 lap,1:33.446,237.852
+Chinese Grand Prix,Esteban Ocon,Haas F1 Team,31,19,14,0,50,+99.723s,1:34.309,235.676
+Chinese Grand Prix,Gabriel Bortoleto,Kick Sauber,5,20,18,0,49,+1 lap,1:34.447,235.331
+Miami Grand Prix,Max Verstappen,Red Bull Racing,1,1,4,12,57,+39.956s,1:30.466,215.364
+Miami Grand Prix,Lando Norris,McLaren,4,2,2,18,57,+4.630s,1:29.746,217.092
+Miami Grand Prix,Kimi Antonelli,Mercedes,12,3,6,8,57,+55.502s,1:30.795,214.584
+Miami Grand Prix,Oscar Piastri,McLaren,81,4,1,25,57,1:28:51.587,1:29.822,216.908
+Miami Grand Prix,George Russell,Mercedes,63,5,3,15,57,+37.644s,1:30.318,215.717
+Miami Grand Prix,Carlos Sainz,Williams,55,6,9,2,57,+60.577s,1:30.703,214.802
+Miami Grand Prix,Alexander Albon,Williams,23,7,5,10,57,+48.067s,1:30.482,215.326
+Miami Grand Prix,Charles Leclerc,Ferrari,16,8,7,6,57,+57.036s,1:30.461,215.376
+Miami Grand Prix,Esteban Ocon,Haas F1 Team,31,9,12,0,57,+82.006s,1:31.122,213.814
+Miami Grand Prix,Yuki Tsunoda,Red Bull Racing,22,10,10,1,57,+74.434s,1:30.964,214.185
+Miami Grand Prix,Isack Hadjar,Racing Bulls,6,11,11,0,57,+74.602s,1:30.971,214.169
+Miami Grand Prix,Lewis Hamilton,Ferrari,44,12,8,4,57,+60.186s,1:30.562,215.136
+Miami Grand Prix,Gabriel Bortoleto,Kick Sauber,5,13,NC,0,30,DNF,1:32.328,211.021
+Miami Grand Prix,Jack Doohan,Alpine,7,14,NC,0,0,DNF,,
+Miami Grand Prix,Liam Lawson,Racing Bulls,30,15,NC,0,36,DNF,1:31.770,212.304
+Miami Grand Prix,Nico Hulkenberg,Kick Sauber,27,16,14,0,56,+1 lap,1:31.015,214.065
+Miami Grand Prix,Fernando Alonso,Aston Martin,14,17,15,0,56,+1 lap,1:31.287,213.427
+Miami Grand Prix,Lance Stroll,Aston Martin,18,18,16,0,56,+1 lap,1:31.769,212.306
+Miami Grand Prix,Oliver Bearman,Haas F1 Team,87,19,NC,0,27,DNF,1:32.680,210.220
+Miami Grand Prix,Pierre Gasly,Alpine,10,20,13,0,57,+90.445s,1:31.159,213.727
+Emilia Romagna Grand Prix,Oscar Piastri,McLaren,81,1,3,15,63,+12.956s,1:18.894,224.001
+Emilia Romagna Grand Prix,Max Verstappen,Red Bull Racing,1,2,1,25,63,1:31:33.199,1:17.988,226.604
+Emilia Romagna Grand Prix,George Russell,Mercedes,63,3,7,6,63,+22.034s,1:19.733,221.644
+Emilia Romagna Grand Prix,Lando Norris,McLaren,4,4,2,18,63,+6.109s,1:18.311,225.669
+Emilia Romagna Grand Prix,Fernando Alonso,Aston Martin,14,5,11,0,63,+27.250s,1:19.894,221.198
+Emilia Romagna Grand Prix,Carlos Sainz,Williams,55,6,8,4,63,+22.898s,1:19.836,221.358
+Emilia Romagna Grand Prix,Alexander Albon,Williams,23,7,5,10,63,+17.945s,1:18.289,225.732
+Emilia Romagna Grand Prix,Lance Stroll,Aston Martin,18,8,15,0,63,+32.993s,1:20.501,219.530
+Emilia Romagna Grand Prix,Isack Hadjar,Racing Bulls,6,9,9,2,63,+23.586s,1:19.473,222.369
+Emilia Romagna Grand Prix,Pierre Gasly,Alpine,10,10,13,0,63,+31.424s,1:20.398,219.811
+Emilia Romagna Grand Prix,Charles Leclerc,Ferrari,16,11,6,8,63,+20.774s,1:19.048,223.565
+Emilia Romagna Grand Prix,Lewis Hamilton,Ferrari,44,12,4,12,63,+14.356s,1:18.265,225.802
+Emilia Romagna Grand Prix,Kimi Antonelli,Mercedes,12,13,NC,0,44,DNF,1:20.620,219.206
+Emilia Romagna Grand Prix,Gabriel Bortoleto,Kick Sauber,5,14,18,0,63,+38.572s,1:20.630,219.178
+Emilia Romagna Grand Prix,Liam Lawson,Racing Bulls,30,15,14,0,63,+32.511s,1:20.473,219.606
+Emilia Romagna Grand Prix,Franco Colapinto,Alpine,43,16,16,0,63,+33.411s,1:20.345,219.956
+Emilia Romagna Grand Prix,Nico Hulkenberg,Kick Sauber,27,17,12,0,63,+30.296s,1:20.401,219.803
+Emilia Romagna Grand Prix,Esteban Ocon,Haas F1 Team,31,18,NC,0,27,DNF,1:21.413,217.070
+Emilia Romagna Grand Prix,Oliver Bearman,Haas F1 Team,87,19,17,0,63,+33.808s,1:19.521,222.235
+Emilia Romagna Grand Prix,Yuki Tsunoda,Red Bull Racing,22,20,10,1,63,+26.446s,1:20.039,220.797
+Monaco Grand Prix,Lando Norris,McLaren,4,1,1,25,78,1:40:33.843,1:13.221,164.067
+Monaco Grand Prix,Charles Leclerc,Ferrari,16,2,2,18,78,+3.131s,1:14.055,162.219
+Monaco Grand Prix,Oscar Piastri,McLaren,81,3,3,15,78,+3.658s,1:13.745,162.901
+Monaco Grand Prix,Max Verstappen,Red Bull Racing,1,4,4,12,78,+20.572s,1:14.230,161.837
+Monaco Grand Prix,Isack Hadjar,Racing Bulls,6,5,6,8,77,+1 lap,1:15.981,158.107
+Monaco Grand Prix,Fernando Alonso,Aston Martin,14,6,NC,0,36,DNF,1:15.593,158.919
+Monaco Grand Prix,Lewis Hamilton,Ferrari,44,7,5,10,78,+51.387s,1:14.090,162.143
+Monaco Grand Prix,Esteban Ocon,Haas F1 Team,31,8,7,6,77,+1 lap,1:15.157,159.841
+Monaco Grand Prix,Liam Lawson,Racing Bulls,30,9,8,4,77,+1 lap,1:15.321,159.493
+Monaco Grand Prix,Alexander Albon,Williams,23,10,9,2,76,+2 laps,1:14.597,161.041
+Monaco Grand Prix,Carlos Sainz,Williams,55,11,10,1,76,+2 laps,1:13.988,162.366
+Monaco Grand Prix,Yuki Tsunoda,Red Bull Racing,22,12,17,0,76,+2 laps,1:14.913,160.362
+Monaco Grand Prix,Nico Hulkenberg,Kick Sauber,27,13,16,0,76,+2 laps,1:15.223,159.701
+Monaco Grand Prix,George Russell,Mercedes,63,14,11,0,76,+2 laps,1:13.405,163.656
+Monaco Grand Prix,Kimi Antonelli,Mercedes,12,15,18,0,75,+3 laps,1:13.518,163.404
+Monaco Grand Prix,Gabriel Bortoleto,Kick Sauber,5,16,14,0,76,+2 laps,1:14.884,160.424
+Monaco Grand Prix,Pierre Gasly,Alpine,10,17,NC,0,7,DNF,1:18.054,153.908
+Monaco Grand Prix,Franco Colapinto,Alpine,43,18,13,0,76,+2 laps,1:15.298,159.542
+Monaco Grand Prix,Lance Stroll,Aston Martin,18,19,15,0,76,+2 laps,1:14.877,160.439
+Monaco Grand Prix,Oliver Bearman,Haas F1 Team,87,20,12,0,76,+2 laps,1:14.855,160.486
+Spanish Grand Prix,Oscar Piastri,McLaren,81,1,1,25,66,1:32:57.375,1:15.743,221.343
+Spanish Grand Prix,Lando Norris,McLaren,4,2,2,18,66,+2.471s,1:16.187,220.053
+Spanish Grand Prix,Max Verstappen,Red Bull Racing,1,3,10,1,66,+21.826s,1:17.019,217.676
+Spanish Grand Prix,George Russell,Mercedes,63,4,4,12,66,+11.359s,1:17.244,217.042
+Spanish Grand Prix,Lewis Hamilton,Ferrari,44,5,6,8,66,+15.508s,1:17.706,215.751
+Spanish Grand Prix,Kimi Antonelli,Mercedes,12,6,NC,0,53,DNF,1:18.255,214.238
+Spanish Grand Prix,Charles Leclerc,Ferrari,16,7,3,15,66,+10.455s,1:17.259,216.999
+Spanish Grand Prix,Pierre Gasly,Alpine,10,8,8,4,66,+17.882s,1:17.896,215.225
+Spanish Grand Prix,Isack Hadjar,Racing Bulls,6,9,7,6,66,+16.022s,1:17.770,215.574
+Spanish Grand Prix,Fernando Alonso,Aston Martin,14,10,9,2,66,+21.564s,1:18.128,214.586
+Spanish Grand Prix,Alexander Albon,Williams,23,11,NC,0,27,DNF,1:20.508,208.242
+Spanish Grand Prix,Gabriel Bortoleto,Kick Sauber,5,12,12,0,66,+25.996s,1:18.297,214.123
+Spanish Grand Prix,Liam Lawson,Racing Bulls,30,13,11,0,66,+25.532s,1:19.424,211.084
+Spanish Grand Prix,Lance Stroll,Aston Martin,18,14,,,,,,
+Spanish Grand Prix,Oliver Bearman,Haas F1 Team,87,14,17,0,66,+37.065s,1:18.907,212.467
+Spanish Grand Prix,Nico Hulkenberg,Kick Sauber,27,15,5,10,66,+13.648s,1:17.575,216.116
+Spanish Grand Prix,Esteban Ocon,Haas F1 Team,31,16,16,0,66,+32.197s,1:18.624,213.232
+Spanish Grand Prix,Carlos Sainz,Williams,55,17,14,0,66,+29.309s,1:19.317,211.369
+Spanish Grand Prix,Franco Colapinto,Alpine,43,18,15,0,66,+31.381s,1:18.353,213.970
+Spanish Grand Prix,Yuki Tsunoda,Red Bull Racing,22,19,13,0,66,+28.822s,1:17.998,214.943
+Canadian Grand Prix,George Russell,Mercedes,63,1,1,25,70,1:31:52.688,1:14.119,211.816
+Canadian Grand Prix,Max Verstappen,Red Bull Racing,1,2,2,18,70,+0.228s,1:14.287,211.337
+Canadian Grand Prix,Oscar Piastri,McLaren,81,3,4,12,70,+2.109s,1:14.255,211.428
+Canadian Grand Prix,Kimi Antonelli,Mercedes,12,4,3,15,70,+1.014s,1:14.455,210.860
+Canadian Grand Prix,Lewis Hamilton,Ferrari,44,5,6,8,70,+10.713s,1:14.805,209.873
+Canadian Grand Prix,Fernando Alonso,Aston Martin,14,6,7,6,70,+10.972s,1:15.024,209.261
+Canadian Grand Prix,Lando Norris,McLaren,4,7,18,0,66,DNF,1:14.229,211.502
+Canadian Grand Prix,Charles Leclerc,Ferrari,16,8,5,10,70,+3.442s,1:14.261,211.411
+Canadian Grand Prix,Alexander Albon,Williams,23,9,NC,0,46,DNF,1:16.197,206.039
+Canadian Grand Prix,Franco Colapinto,Alpine,43,10,13,0,69,+1 lap,1:16.076,206.367
+Canadian Grand Prix,Nico Hulkenberg,Kick Sauber,27,11,8,4,70,+15.364s,1:15.372,208.294
+Canadian Grand Prix,Isack Hadjar,Racing Bulls,6,12,16,0,69,+1 lap,1:16.292,205.783
+Canadian Grand Prix,Oliver Bearman,Haas F1 Team,87,13,11,0,69,+1 lap,1:15.397,208.225
+Canadian Grand Prix,Esteban Ocon,Haas F1 Team,31,14,9,2,69,+1 lap,1:14.593,210.470
+Canadian Grand Prix,Gabriel Bortoleto,Kick Sauber,5,15,14,0,69,+1 lap,1:15.414,208.178
+Canadian Grand Prix,Carlos Sainz,Williams,55,16,10,1,69,+1 lap,1:14.389,211.047
+Canadian Grand Prix,Lance Stroll,Aston Martin,18,17,17,0,69,+1 lap,1:14.902,209.601
+Canadian Grand Prix,Yuki Tsunoda,Red Bull Racing,22,18,12,0,69,+1 lap,1:15.358,208.333
+Canadian Grand Prix,Liam Lawson,Racing Bulls,30,19,NC,0,53,DNF,1:16.320,205.707
+Canadian Grand Prix,Pierre Gasly,Alpine,10,20,15,0,69,+1 lap,1:14.993,209.347
+Austrian Grand Prix,Lando Norris,McLaren,4,1,1,25,70,1:23:47.693,1:08.272,228.111
+Austrian Grand Prix,Charles Leclerc,Ferrari,16,2,3,15,70,+19.820s,1:08.765,226.475
+Austrian Grand Prix,Oscar Piastri,McLaren,81,3,2,18,70,+2.695s,1:07.924,229.279
+Austrian Grand Prix,Lewis Hamilton,Ferrari,44,4,4,12,70,+29.020s,1:08.628,226.927
+Austrian Grand Prix,George Russell,Mercedes,63,5,5,10,70,+62.396s,1:09.372,224.494
+Austrian Grand Prix,Liam Lawson,Racing Bulls,30,6,6,8,70,+67.754s,1:09.977,222.553
+Austrian Grand Prix,Max Verstappen,Red Bull Racing,1,7,NC,0,0,DNF,,
+Austrian Grand Prix,Gabriel Bortoleto,Kick Sauber,5,8,8,4,69,+1 lap,1:09.247,224.899
+Austrian Grand Prix,Kimi Antonelli,Mercedes,12,9,NC,0,0,DNF,,
+Austrian Grand Prix,Pierre Gasly,Alpine,10,10,13,0,69,+1 lap,1:10.151,222.001
+Austrian Grand Prix,Fernando Alonso,Aston Martin,14,11,7,6,69,+1 lap,1:09.935,222.686
+Austrian Grand Prix,Alexander Albon,Williams,23,12,NC,0,15,DNF,1:10.641,220.461
+Austrian Grand Prix,Isack Hadjar,Racing Bulls,6,13,12,0,69,+1 lap,1:10.204,221.833
+Austrian Grand Prix,Franco Colapinto,Alpine,43,14,15,0,69,+1 lap,1:09.621,223.691
+Austrian Grand Prix,Oliver Bearman,Haas F1 Team,87,15,11,0,69,+1 lap,1:09.960,222.607
+Austrian Grand Prix,Lance Stroll,Aston Martin,18,16,14,0,69,+1 lap,1:09.214,225.006
+Austrian Grand Prix,Esteban Ocon,Haas F1 Team,31,17,10,1,69,+1 lap,1:09.550,223.919
+Austrian Grand Prix,Yuki Tsunoda,Red Bull Racing,22,18,16,0,68,+2 laps,1:09.802,223.111
+Austrian Grand Prix,Carlos Sainz,Williams,55,19,NC,0,0,DNS,,
+Austrian Grand Prix,Nico Hulkenberg,Kick Sauber,27,20,9,2,69,+1 lap,1:09.459,224.212
+British Grand Prix,Lando Norris,McLaren,4,1,2,18,44,+3.415s,1:45.257,239.550
+British Grand Prix,Oscar Piastri,McLaren,81,2,1,25,44,1:25:22.601,1:45.706,238.533
+British Grand Prix,Charles Leclerc,Ferrari,16,3,3,15,44,+20.185s,1:46.174,237.481
+British Grand Prix,Max Verstappen,Red Bull Racing,1,4,4,12,44,+21.731s,1:46.096,237.656
+British Grand Prix,Alexander Albon,Williams,23,5,6,8,44,+39.926s,1:46.813,236.061
+British Grand Prix,George Russell,Mercedes,63,6,5,10,44,+34.863s,1:46.566,236.608
+British Grand Prix,Yuki Tsunoda,Red Bull Racing,22,7,13,0,44,+75.395s,1:47.241,235.119
+British Grand Prix,Isack Hadjar,Racing Bulls,6,8,20,0,43,+1 lap,1:47.667,234.188
+British Grand Prix,Liam Lawson,Racing Bulls,30,9,8,4,44,+52.033s,1:46.649,236.424
+British Grand Prix,Gabriel Bortoleto,Kick Sauber,5,10,9,2,44,+56.434s,1:46.966,235.723
+British Grand Prix,Esteban Ocon,Haas F1 Team,31,11,15,0,44,+86.063s,1:46.744,236.213
+British Grand Prix,Oliver Bearman,Haas F1 Team,87,12,11,0,44,+73.145s,1:46.709,236.291
+British Grand Prix,Pierre Gasly,Alpine,10,13,10,1,44,+72.714s,1:47.177,235.259
+British Grand Prix,Nico Hulkenberg,Kick Sauber,27,14,12,0,44,+73.628s,1:45.068,239.981
+British Grand Prix,Franco Colapinto,Alpine,43,15,19,0,44,+95.250s,1:46.104,237.638
+British Grand Prix,Lance Stroll,Aston Martin,18,16,14,0,44,+79.831s,1:47.212,235.182
+British Grand Prix,Carlos Sainz,Williams,55,17,18,0,44,+92.024s,1:46.073,237.707
+British Grand Prix,Lewis Hamilton,Ferrari,44,18,7,6,44,+40.679s,1:46.534,236.679
+British Grand Prix,Kimi Antonelli,Mercedes,12,19,16,0,44,+86.721s,1:44.861,240.455
+British Grand Prix,Fernando Alonso,Aston Martin,14,20,17,0,44,+87.924s,1:45.849,238.211
+Hungarian Grand Prix,Charles Leclerc,Ferrari,16,1,4,12,70,+42.560s,1:20.440,196.066
+Hungarian Grand Prix,Oscar Piastri,McLaren,81,2,2,18,70,+0.698s,1:19.412,198.604
+Hungarian Grand Prix,Lando Norris,McLaren,4,3,1,25,70,1:35:21.231,1:19.918,197.347
+Hungarian Grand Prix,George Russell,Mercedes,63,4,3,15,70,+21.916s,1:19.409,198.612
+Hungarian Grand Prix,Fernando Alonso,Aston Martin,14,5,5,10,70,+59.040s,1:20.113,196.866
+Hungarian Grand Prix,Lance Stroll,Aston Martin,18,6,7,6,70,+68.174s,1:20.708,195.415
+Hungarian Grand Prix,Gabriel Bortoleto,Kick Sauber,5,7,6,8,70,+66.169s,1:20.705,195.422
+Hungarian Grand Prix,Max Verstappen,Red Bull Racing,1,8,9,2,70,+72.645s,1:19.576,198.195
+Hungarian Grand Prix,Liam Lawson,Racing Bulls,30,9,8,4,70,+69.451s,1:20.457,196.025
+Hungarian Grand Prix,Isack Hadjar,Racing Bulls,6,10,11,0,69,+1 lap,1:20.802,195.188
+Hungarian Grand Prix,Oliver Bearman,Haas F1 Team,87,11,NC,0,48,DNF,1:21.989,192.362
+Hungarian Grand Prix,Lewis Hamilton,Ferrari,44,12,12,0,69,+1 lap,1:20.022,197.090
+Hungarian Grand Prix,Carlos Sainz,Williams,55,13,14,0,69,+1 lap,1:19.790,197.663
+Hungarian Grand Prix,Franco Colapinto,Alpine,43,14,18,0,69,+1 lap,1:20.827,195.127
+Hungarian Grand Prix,Kimi Antonelli,Mercedes,12,15,10,1,69,+1 lap,1:20.745,195.326
+Hungarian Grand Prix,Pierre Gasly,Alpine,10,16,19,0,69,+1 lap,1:21.433,193.675
+Hungarian Grand Prix,Esteban Ocon,Haas F1 Team,31,17,16,0,69,+1 lap,1:21.916,192.533
+Hungarian Grand Prix,Nico Hulkenberg,Kick Sauber,27,18,13,0,69,+1 lap,1:20.013,197.112
+Hungarian Grand Prix,Alexander Albon,Williams,23,19,15,0,69,+1 lap,1:20.779,195.243
+Hungarian Grand Prix,Yuki Tsunoda,Red Bull Racing,22,20,17,0,69,+1 lap,1:21.180,194.279
+Belgian Grand Prix,Oscar Piastri,McLaren,81,1,1,25,72,1:38:29.849,1:12.271,212.151
+Belgian Grand Prix,Lando Norris,McLaren,4,2,18,0,64,DNF,1:12.379,211.834
+Belgian Grand Prix,Max Verstappen,Red Bull Racing,1,3,2,18,72,+1.271s,1:12.921,210.260
+Belgian Grand Prix,Isack Hadjar,Racing Bulls,6,4,3,15,72,+3.233s,1:13.327,209.096
+Belgian Grand Prix,George Russell,Mercedes,63,5,4,12,72,+5.654s,1:13.728,207.958
+Belgian Grand Prix,Charles Leclerc,Ferrari,16,6,NC,0,52,DNF,1:14.557,205.646
+Belgian Grand Prix,Lewis Hamilton,Ferrari,44,7,NC,0,22,DNF,1:15.684,202.584
+Belgian Grand Prix,Liam Lawson,Racing Bulls,30,8,12,0,72,+17.063s,1:13.879,207.533
+Belgian Grand Prix,Carlos Sainz,Williams,55,9,13,0,72,+17.376s,1:13.808,207.733
+Belgian Grand Prix,Fernando Alonso,Aston Martin,14,10,8,4,72,+11.709s,1:13.719,207.984
+Belgian Grand Prix,Kimi Antonelli,Mercedes,12,11,16,0,72,+22.029s,1:13.480,208.660
+Belgian Grand Prix,Yuki Tsunoda,Red Bull Racing,22,12,9,2,72,+13.597s,1:14.354,206.208
+Belgian Grand Prix,Gabriel Bortoleto,Kick Sauber,5,13,15,0,72,+21.565s,1:14.307,206.338
+Belgian Grand Prix,Pierre Gasly,Alpine,10,14,17,0,72,+23.629s,1:15.248,203.758
+Belgian Grand Prix,Alexander Albon,Williams,23,15,5,10,72,+6.327s,1:13.687,208.074
+Belgian Grand Prix,Franco Colapinto,Alpine,43,16,11,0,72,+14.511s,1:13.049,209.891
+Belgian Grand Prix,Nico Hulkenberg,Kick Sauber,27,17,14,0,72,+19.725s,1:14.912,204.672
+Belgian Grand Prix,Esteban Ocon,Haas F1 Team,31,18,10,1,72,+14.063s,1:13.986,207.233
+Belgian Grand Prix,Lance Stroll,Aston Martin,18,19,7,6,72,+9.497s,1:13.822,207.694
+Belgian Grand Prix,Oliver Bearman,Haas F1 Team,87,20,6,8,72,+9.044s,1:13.950,207.334
+Dutch Grand Prix,Max Verstappen,Red Bull Racing,1,1,1,25,53,1:13:24.325,1:21.003,257.457
+Dutch Grand Prix,Lando Norris,McLaren,4,2,2,18,53,+19.207s,1:20.901,257.781
+Dutch Grand Prix,Oscar Piastri,McLaren,81,3,3,15,53,+21.351s,1:21.245,256.690
+Dutch Grand Prix,Charles Leclerc,Ferrari,16,4,4,12,53,+25.624s,1:21.294,256.535
+Dutch Grand Prix,George Russell,Mercedes,63,5,5,10,53,+32.881s,1:21.800,254.948
+Dutch Grand Prix,Kimi Antonelli,Mercedes,12,6,9,2,53,+59.762s,1:21.968,254.426
+Dutch Grand Prix,Gabriel Bortoleto,Kick Sauber,5,7,8,4,53,+58.484s,1:22.139,253.896
+Dutch Grand Prix,Fernando Alonso,Aston Martin,14,8,NC,0,24,DNF,1:23.757,248.991
+Dutch Grand Prix,Yuki Tsunoda,Red Bull Racing,22,9,13,0,53,+80.701s,1:22.712,252.137
+Dutch Grand Prix,Lewis Hamilton,Ferrari,44,10,6,8,53,+37.449s,1:21.546,255.742
+Dutch Grand Prix,Oliver Bearman,Haas F1 Team,87,11,12,0,53,+79.288s,1:21.820,254.886
+Dutch Grand Prix,Nico Hulkenberg,Kick Sauber,27,12,NC,0,0,DNS,,
+Dutch Grand Prix,Carlos Sainz,Williams,55,13,11,0,53,+64.469s,1:21.740,255.135
+Dutch Grand Prix,Alexander Albon,Williams,23,14,7,6,53,+50.537s,1:21.368,256.302
+Dutch Grand Prix,Esteban Ocon,Haas F1 Team,31,15,15,0,52,+1 lap,1:22.892,251.590
+Dutch Grand Prix,Lance Stroll,Aston Martin,18,16,18,0,52,+1 lap,1:22.164,253.819
+Dutch Grand Prix,Franco Colapinto,Alpine,43,17,17,0,52,+1 lap,1:22.239,253.587
+Dutch Grand Prix,Liam Lawson,Racing Bulls,30,18,14,0,53,+82.351s,1:22.777,251.939
+Dutch Grand Prix,Isack Hadjar,Racing Bulls,6,19,10,1,53,+63.891s,1:22.133,253.914
+Dutch Grand Prix,Pierre Gasly,Alpine,10,20,16,0,52,+1 lap,1:22.185,253.754
+Italian Grand Prix,Max Verstappen,Red Bull Racing,1,1,1,25,51,1:33:26.408,1:43.388,209.026
+Italian Grand Prix,Carlos Sainz,Williams,55,2,3,15,51,+19.199s,1:43.972,207.852
+Italian Grand Prix,Liam Lawson,Racing Bulls,30,3,5,10,51,+33.290s,1:44.531,206.740
+Italian Grand Prix,Kimi Antonelli,Mercedes,12,4,4,12,51,+21.760s,1:44.091,207.614
+Italian Grand Prix,George Russell,Mercedes,63,5,2,18,51,+14.609s,1:43.754,208.288
+Italian Grand Prix,Yuki Tsunoda,Red Bull Racing,22,6,6,8,51,+33.808s,1:44.434,206.932
+Italian Grand Prix,Lando Norris,McLaren,4,7,7,6,51,+34.227s,1:44.155,207.486
+Italian Grand Prix,Isack Hadjar,Racing Bulls,6,8,10,1,51,+38.982s,1:43.884,208.028
+Italian Grand Prix,Oscar Piastri,McLaren,81,9,NC,0,0,DNF,,
+Italian Grand Prix,Charles Leclerc,Ferrari,16,10,9,2,51,+36.774s,1:44.274,207.250
+Italian Grand Prix,Fernando Alonso,Aston Martin,14,11,15,0,51,+78.707s,1:45.002,205.813
+Italian Grand Prix,Lewis Hamilton,Ferrari,44,12,8,4,51,+36.310s,1:43.977,207.842
+Italian Grand Prix,Gabriel Bortoleto,Kick Sauber,5,13,11,0,51,+67.606s,1:44.930,205.954
+Italian Grand Prix,Lance Stroll,Aston Martin,18,14,17,0,51,+96.392s,1:45.083,205.654
+Italian Grand Prix,Oliver Bearman,Haas F1 Team,87,15,12,0,51,+68.262s,1:44.288,207.222
+Italian Grand Prix,Franco Colapinto,Alpine,43,16,19,0,50,+1 lap,1:46.055,203.769
+Italian Grand Prix,Nico Hulkenberg,Kick Sauber,27,17,16,0,51,+80.237s,1:44.370,207.059
+Italian Grand Prix,Pierre Gasly,Alpine,10,18,18,0,50,+1 lap,1:45.492,204.857
+Italian Grand Prix,Alexander Albon,Williams,23,19,13,0,51,+72.870s,1:44.152,207.492
+Italian Grand Prix,Esteban Ocon,Haas F1 Team,31,20,14,0,51,+77.580s,1:45.388,205.059
+Azerbaijan Grand Prix,George Russell,Mercedes,63,1,1,25,62,1:40:22.367,1:35.676,185.388
+Azerbaijan Grand Prix,Max Verstappen,Red Bull Racing,1,2,2,18,62,+5.430s,1:35.649,185.440
+Azerbaijan Grand Prix,Oscar Piastri,McLaren,81,3,4,12,62,+8.146s,1:35.408,185.908
+Azerbaijan Grand Prix,Kimi Antonelli,Mercedes,12,4,5,10,62,+33.681s,1:35.303,186.113
+Azerbaijan Grand Prix,Lando Norris,McLaren,4,5,3,15,62,+6.066s,1:35.555,185.622
+Azerbaijan Grand Prix,Lewis Hamilton,Ferrari,44,6,8,4,62,+85.251s,1:33.808,189.079
+Azerbaijan Grand Prix,Charles Leclerc,Ferrari,16,7,6,8,62,+45.996s,1:35.983,184.795
+Azerbaijan Grand Prix,Isack Hadjar,Racing Bulls,6,8,11,0,61,+1 lap,1:36.938,182.974
+Azerbaijan Grand Prix,Oliver Bearman,Haas F1 Team,87,9,9,2,62,+93.527s,1:36.201,184.376
+Azerbaijan Grand Prix,Fernando Alonso,Aston Martin,14,10,7,6,62,+80.667s,1:35.862,185.028
+Azerbaijan Grand Prix,Nico Hulkenberg,Kick Sauber,27,11,20,0,61,+1 lap,1:35.404,185.916
+Azerbaijan Grand Prix,Liam Lawson,Racing Bulls,30,12,15,0,61,+1 lap,1:35.641,185.456
+Azerbaijan Grand Prix,Yuki Tsunoda,Red Bull Racing,22,13,12,0,61,+1 lap,1:36.831,183.176
+Azerbaijan Grand Prix,Gabriel Bortoleto,Kick Sauber,5,14,17,0,61,+1 lap,1:37.126,182.620
+Azerbaijan Grand Prix,Lance Stroll,Aston Martin,18,15,13,0,61,+1 lap,1:35.851,185.049
+Azerbaijan Grand Prix,Franco Colapinto,Alpine,43,16,16,0,61,+1 lap,1:37.182,182.515
+Azerbaijan Grand Prix,Esteban Ocon,Haas F1 Team,31,17,18,0,61,+1 lap,1:36.646,183.527
+Azerbaijan Grand Prix,Carlos Sainz,Williams,55,18,10,1,61,+1 lap,1:34.963,186.780
+Azerbaijan Grand Prix,Pierre Gasly,Alpine,10,19,19,0,61,+1 lap,1:34.573,187.550
+Azerbaijan Grand Prix,Alexander Albon,Williams,23,20,14,0,61,+1 lap,1:35.648,185.442
+Singapore Grand Prix,Max Verstappen,Red Bull Racing,1,1,1,25,56,1:34:00.161,1:37.991,202.536
+Singapore Grand Prix,Lando Norris,McLaren,4,2,2,18,56,+7.959s,1:37.620,203.306
+Singapore Grand Prix,Charles Leclerc,Ferrari,16,3,3,15,56,+15.373s,1:38.231,202.042
+Singapore Grand Prix,George Russell,Mercedes,63,4,6,8,56,+33.456s,1:38.224,202.056
+Singapore Grand Prix,Lewis Hamilton,Ferrari,44,5,4,12,56,+28.536s,1:38.361,201.775
+Singapore Grand Prix,Oscar Piastri,McLaren,81,6,5,10,56,+29.678s,1:38.564,201.359
+Singapore Grand Prix,Kimi Antonelli,Mercedes,12,7,13,0,56,+75.746s,1:37.577,203.396
+Singapore Grand Prix,Oliver Bearman,Haas F1 Team,87,8,9,2,56,+64.722s,1:39.119,200.232
+Singapore Grand Prix,Carlos Sainz,Williams,55,9,NC,0,5,DNF,1:40.327,197.821
+Singapore Grand Prix,Fernando Alonso,Aston Martin,14,10,10,1,56,+70.001s,1:38.789,200.900
+Singapore Grand Prix,Nico Hulkenberg,Kick Sauber,27,11,8,4,56,+57.249s,1:38.372,201.752
+Singapore Grand Prix,Liam Lawson,Racing Bulls,30,12,11,0,56,+73.209s,1:38.983,200.507
+Singapore Grand Prix,Yuki Tsunoda,Red Bull Racing,22,13,7,6,56,+52.714s,1:38.803,200.872
+Singapore Grand Prix,Pierre Gasly,Alpine,10,14,19,0,55,+1 lap,1:39.270,199.927
+Singapore Grand Prix,Franco Colapinto,Alpine,43,15,17,0,55,+1 lap,1:39.173,200.123
+Singapore Grand Prix,Gabriel Bortoleto,Kick Sauber,5,16,18,0,55,+1 lap,1:38.275,201.951
+Singapore Grand Prix,Esteban Ocon,Haas F1 Team,31,17,15,0,56,+83.043s,1:39.263,199.941
+Singapore Grand Prix,Alexander Albon,Williams,23,18,14,0,56,+80.000s,1:38.328,201.842
+Singapore Grand Prix,Lance Stroll,Aston Martin,18,19,12,0,56,+74.778s,1:39.071,200.329
+Singapore Grand Prix,Isack Hadjar,Racing Bulls,6,20,16,0,56,+92.807s,1:38.724,201.033
+United States Grand Prix,Lando Norris,McLaren,4,1,1,25,71,1:37:58.574,1:20.764,191.847
+United States Grand Prix,Charles Leclerc,Ferrari,16,2,2,18,71,+30.324s,1:21.588,189.910
+United States Grand Prix,Lewis Hamilton,Ferrari,44,3,8,4,71,+56.446s,1:20.601,192.235
+United States Grand Prix,George Russell,Mercedes,63,4,7,6,71,+50.287s,1:20.052,193.554
+United States Grand Prix,Max Verstappen,Red Bull Racing,1,5,3,15,71,+31.049s,1:21.108,191.034
+United States Grand Prix,Kimi Antonelli,Mercedes,12,6,6,8,71,+47.837s,1:20.826,191.700
+United States Grand Prix,Oscar Piastri,McLaren,81,7,5,10,71,+42.065s,1:20.422,192.663
+United States Grand Prix,Isack Hadjar,Racing Bulls,6,8,13,0,70,+1 lap,1:21.714,189.617
+United States Grand Prix,Oliver Bearman,Haas F1 Team,87,9,4,12,71,+40.955s,1:20.705,191.988
+United States Grand Prix,Yuki Tsunoda,Red Bull Racing,22,10,11,0,71,+79.048s,1:21.486,190.148
+United States Grand Prix,Esteban Ocon,Haas F1 Team,31,11,9,2,71,+75.464s,1:21.869,189.258
+United States Grand Prix,Carlos Sainz,Williams,55,12,17,0,67,DNF,1:20.098,193.443
+United States Grand Prix,Nico Hulkenberg,Kick Sauber,27,13,NC,0,25,DNF,1:23.091,186.475
+United States Grand Prix,Fernando Alonso,Aston Martin,14,14,NC,0,34,DNF,1:21.708,189.631
+United States Grand Prix,Liam Lawson,Racing Bulls,30,15,NC,0,5,DNF,1:25.124,182.021
+United States Grand Prix,Gabriel Bortoleto,Kick Sauber,5,16,10,1,71,+76.863s,1:21.121,191.003
+United States Grand Prix,Alexander Albon,Williams,23,17,12,0,70,+1 lap,1:20.480,192.524
+United States Grand Prix,Pierre Gasly,Alpine,10,18,15,0,70,+1 lap,1:22.271,188.333
+United States Grand Prix,Lance Stroll,Aston Martin,18,19,14,0,70,+1 lap,1:20.593,192.254
+United States Grand Prix,Franco Colapinto,Alpine,43,20,16,0,70,+1 lap,1:21.342,190.484
+Mexican Grand Prix,Lando Norris,McLaren,4,1,1,25,71,1:32:01.596,1:13.040,212.382
+Mexican Grand Prix,Kimi Antonelli,Mercedes,12,2,2,18,71,+10.388s,1:13.123,212.141
+Mexican Grand Prix,Charles Leclerc,Ferrari,16,3,NC,0,5,DNF,1:43.560,149.791
+Mexican Grand Prix,Oscar Piastri,McLaren,81,4,5,10,71,+15.749s,1:12.742,213.252
+Mexican Grand Prix,Isack Hadjar,Racing Bulls,6,5,8,4,71,+52.873s,1:13.694,210.497
+Mexican Grand Prix,George Russell,Mercedes,63,6,4,12,71,+15.267s,1:13.097,212.216
+Mexican Grand Prix,Liam Lawson,Racing Bulls,30,7,7,6,71,+52.642s,1:14.029,209.544
+Mexican Grand Prix,Oliver Bearman,Haas F1 Team,87,8,6,8,71,+29.630s,1:13.483,211.101
+Mexican Grand Prix,Pierre Gasly,Alpine,10,9,10,1,71,+53.914s,1:13.736,210.377
+Mexican Grand Prix,Nico Hulkenberg,Kick Sauber,27,10,9,2,71,+53.324s,1:13.474,211.127
+Mexican Grand Prix,Fernando Alonso,Aston Martin,14,11,14,0,71,+55.766s,1:13.312,211.594
+Mexican Grand Prix,Alexander Albon,Williams,23,12,11,0,71,+54.184s,1:12.400,214.259
+Mexican Grand Prix,Lewis Hamilton,Ferrari,44,13,NC,0,37,DNF,1:13.844,210.069
+Mexican Grand Prix,Lance Stroll,Aston Martin,18,14,16,0,71,+58.247s,1:13.094,212.225
+Mexican Grand Prix,Carlos Sainz,Williams,55,15,13,0,71,+55.420s,1:13.683,210.528
+Mexican Grand Prix,Franco Colapinto,Alpine,43,16,15,0,71,+57.777s,1:12.816,213.035
+Mexican Grand Prix,Yuki Tsunoda,Red Bull Racing,22,17,17,0,71,+69.176s,1:12.774,213.158
+Mexican Grand Prix,Gabriel Bortoleto,Kick Sauber,5,18,NC,0,0,DNF,,
+Mexican Grand Prix,Max Verstappen,Red Bull Racing,1,19,3,15,71,+10.750s,1:12.447,214.120
+Mexican Grand Prix,Esteban Ocon,Haas F1 Team,31,20,12,0,71,+54.696s,1:13.481,211.107
+São Paulo Grand Prix,Lando Norris,McLaren,4,1,DQ,0,,DSQ,1:33.965,237.573
+São Paulo Grand Prix,Max Verstappen,Red Bull Racing,1,2,1,25,50,1:21:08.429,1:33.365,239.100
+São Paulo Grand Prix,Carlos Sainz,Williams,55,3,5,10,50,+34.924s,1:34.496,236.238
+São Paulo Grand Prix,George Russell,Mercedes,63,4,2,18,50,+23.546s,1:34.592,235.998
+São Paulo Grand Prix,Oscar Piastri,McLaren,81,5,DQ,0,,DSQ,1:34.086,237.268
+São Paulo Grand Prix,Liam Lawson,Racing Bulls,30,6,14,0,49,+1 lap,1:34.837,235.389
+São Paulo Grand Prix,Fernando Alonso,Aston Martin,14,7,11,0,50,+85.308s,1:35.629,233.439
+São Paulo Grand Prix,Isack Hadjar,Racing Bulls,6,8,6,8,50,+45.257s,1:34.620,235.928
+São Paulo Grand Prix,Charles Leclerc,Ferrari,16,9,4,12,50,+30.678s,1:34.304,236.719
+São Paulo Grand Prix,Pierre Gasly,Alpine,10,10,13,0,50,+91.702s,1:35.674,233.329
+São Paulo Grand Prix,Nico Hulkenberg,Kick Sauber,27,11,7,6,50,+51.134s,1:34.592,235.998
+São Paulo Grand Prix,Lance Stroll,Aston Martin,18,12,NC,0,0,DNF,,
+São Paulo Grand Prix,Esteban Ocon,Haas F1 Team,31,13,9,2,50,+60.635s,1:34.557,236.086
+São Paulo Grand Prix,Oliver Bearman,Haas F1 Team,87,14,10,1,50,+70.549s,1:34.519,236.181
+São Paulo Grand Prix,Franco Colapinto,Alpine,43,15,15,0,49,+1 lap,1:35.780,233.071
+São Paulo Grand Prix,Alexander Albon,Williams,23,16,NC,0,35,DNF,1:35.184,234.531
+São Paulo Grand Prix,Kimi Antonelli,Mercedes,12,17,3,15,50,+30.488s,1:33.998,237.490
+São Paulo Grand Prix,Gabriel Bortoleto,Kick Sauber,5,18,NC,0,2,DNF,,
+São Paulo Grand Prix,Lewis Hamilton,Ferrari,44,19,8,4,50,+59.369s,1:34.553,236.096
+São Paulo Grand Prix,Yuki Tsunoda,Red Bull Racing,22,20,12,0,50,+86.974s,1:34.967,235.066
+Las Vegas Grand Prix,Oscar Piastri,McLaren,81,1,2,18,57,+7.995s,1:22.996,235.052
+Las Vegas Grand Prix,Lando Norris,McLaren,4,2,4,12,57,+23.315s,1:23.197,234.484
+Las Vegas Grand Prix,Max Verstappen,Red Bull Racing,1,3,1,25,57,1:24:38.241,1:23.498,233.639
+Las Vegas Grand Prix,George Russell,Mercedes,63,4,6,8,57,+48.599s,1:23.198,234.481
+Las Vegas Grand Prix,Kimi Antonelli,Mercedes,12,5,5,10,57,+28.317s,1:23.955,232.367
+Las Vegas Grand Prix,Isack Hadjar,Racing Bulls,6,6,18,0,55,DNF,1:24.317,231.369
+Las Vegas Grand Prix,Carlos Sainz,Williams,55,7,3,15,57,+22.665s,1:23.859,232.633
+Las Vegas Grand Prix,Fernando Alonso,Aston Martin,14,8,7,6,57,+54.045s,1:23.940,232.408
+Las Vegas Grand Prix,Pierre Gasly,Alpine,10,9,16,0,56,+1 lap,1:25.376,228.499
+Las Vegas Grand Prix,Charles Leclerc,Ferrari,16,10,8,4,57,+56.785s,1:24.432,231.054
+Las Vegas Grand Prix,Nico Hulkenberg,Kick Sauber,27,11,NC,0,6,DNF,1:28.139,221.336
+Las Vegas Grand Prix,Liam Lawson,Racing Bulls,30,12,9,2,57,+60.073s,1:23.971,232.323
+Las Vegas Grand Prix,Oliver Bearman,Haas F1 Team,87,13,NC,0,41,DNF,1:24.930,229.699
+Las Vegas Grand Prix,Alexander Albon,Williams,23,14,11,0,57,+66.931s,1:24.261,231.523
+Las Vegas Grand Prix,Yuki Tsunoda,Red Bull Racing,22,15,10,1,57,+61.770s,1:24.139,231.859
+Las Vegas Grand Prix,Esteban Ocon,Haas F1 Team,31,16,15,0,56,+1 lap,1:25.056,229.359
+Las Vegas Grand Prix,Lewis Hamilton,Ferrari,44,17,12,0,57,+77.730s,1:24.848,229.921
+Las Vegas Grand Prix,Lance Stroll,Aston Martin,18,18,17,0,55,DNF,1:23.484,233.678
+Las Vegas Grand Prix,Gabriel Bortoleto,Kick Sauber,5,19,13,0,57,+84.812s,1:25.233,228.883
+Las Vegas Grand Prix,Franco Colapinto,Alpine,43,20,14,0,56,+1 lap,1:25.644,227.784
+Qatar Grand Prix,Max Verstappen,Red Bull Racing,1,1,1,25,58,1:26:07.469,1:27.625,216.965
+Qatar Grand Prix,Lando Norris,McLaren,4,2,3,15,58,+16.572s,1:26.818,218.982
+Qatar Grand Prix,Oscar Piastri,McLaren,81,3,2,18,58,+12.594s,1:26.765,219.116
+Qatar Grand Prix,George Russell,Mercedes,63,4,5,10,58,+48.563s,1:28.599,214.580
+Qatar Grand Prix,Charles Leclerc,Ferrari,16,5,4,12,58,+23.279s,1:26.725,219.217
+Qatar Grand Prix,Fernando Alonso,Aston Martin,14,6,6,8,58,+67.562s,1:28.279,215.358
+Qatar Grand Prix,Gabriel Bortoleto,Kick Sauber,5,7,11,0,58,+81.043s,1:29.114,213.340
+Qatar Grand Prix,Esteban Ocon,Haas F1 Team,31,8,7,6,58,+69.876s,1:28.655,214.444
+Qatar Grand Prix,Isack Hadjar,Racing Bulls,6,9,17,0,57,+1 lap,1:29.375,212.717
+Qatar Grand Prix,Yuki Tsunoda,Red Bull Racing,22,10,14,0,58,+83.794s,1:28.557,214.682
+Qatar Grand Prix,Oliver Bearman,Haas F1 Team,87,11,12,0,58,+81.166s,1:28.976,213.671
+Qatar Grand Prix,Carlos Sainz,Williams,55,12,13,0,58,+82.158s,1:29.052,213.488
+Qatar Grand Prix,Liam Lawson,Racing Bulls,30,13,18,0,57,+1 lap,1:28.886,213.887
+Qatar Grand Prix,Kimi Antonelli,Mercedes,12,14,15,0,58,+84.399s,1:28.029,215.969
+Qatar Grand Prix,Lance Stroll,Aston Martin,18,15,10,1,58,+79.523s,1:27.626,216.963
+Qatar Grand Prix,Lewis Hamilton,Ferrari,44,16,8,4,58,+72.670s,1:28.094,215.810
+Qatar Grand Prix,Alexander Albon,Williams,23,17,16,0,58,+90.327s,1:28.367,215.143
+Qatar Grand Prix,Nico Hulkenberg,Kick Sauber,27,18,9,2,58,+79.014s,1:27.050,218.398
+Qatar Grand Prix,Pierre Gasly,Alpine,10,19,19,0,57,+1 lap,1:27.767,216.614
+Qatar Grand Prix,Franco Colapinto,Alpine,43,20,20,0,57,+1 lap,1:27.710,216.755
+Abu Dhabi Grand Prix,Max Verstappen,Red Bull Racing,1,1,5,10,52,+56.781s,1:30.179,235.172
+Abu Dhabi Grand Prix,Oscar Piastri,McLaren,81,2,2,18,52,+6.812s,1:29.337,237.388
+Abu Dhabi Grand Prix,Lando Norris,McLaren,4,3,1,25,52,1:37:15.735,1:29.734,236.338
+Abu Dhabi Grand Prix,George Russell,Mercedes,63,4,10,1,52,+70.674s,1:30.869,233.386
+Abu Dhabi Grand Prix,Lewis Hamilton,Ferrari,44,5,4,12,52,+39.812s,1:30.016,235.598
+Abu Dhabi Grand Prix,Charles Leclerc,Ferrari,16,6,14,0,52,+84.477s,1:30.819,233.515
+Abu Dhabi Grand Prix,Fernando Alonso,Aston Martin,14,7,9,2,52,+65.858s,1:30.353,234.719
+Abu Dhabi Grand Prix,Pierre Gasly,Alpine,10,8,6,8,52,+59.857s,1:30.751,233.689
+Abu Dhabi Grand Prix,Carlos Sainz,Williams,55,9,12,0,52,+76.592s,1:30.645,233.963
+Abu Dhabi Grand Prix,Kimi Antonelli,Mercedes,12,10,NC,0,23,DNF,1:45.576,200.875
+Abu Dhabi Grand Prix,Yuki Tsunoda,Red Bull Racing,22,11,15,0,51,+1 lap,1:30.873,233.376
+Abu Dhabi Grand Prix,Isack Hadjar,Racing Bulls,6,12,NC,0,17,DNF,1:41.705,208.520
+Abu Dhabi Grand Prix,Alexander Albon,Williams,23,13,8,4,52,+64.135s,1:30.047,235.517
+Abu Dhabi Grand Prix,Esteban Ocon,Haas F1 Team,31,14,13,0,52,+77.301s,1:30.818,233.517
+Abu Dhabi Grand Prix,Liam Lawson,Racing Bulls,30,15,NC,0,0,DNF,,
+Abu Dhabi Grand Prix,Gabriel Bortoleto,Kick Sauber,5,16,NC,0,3,DNF,2:16.121,155.799
+Abu Dhabi Grand Prix,Lance Stroll,Aston Martin,18,17,7,6,52,+60.603s,1:32.088,230.297
+Abu Dhabi Grand Prix,Oliver Bearman,Haas F1 Team,87,18,11,0,52,+72.095s,1:30.921,233.253
+Abu Dhabi Grand Prix,Nico Hulkenberg,Kick Sauber,27,19,3,15,52,+34.742s,1:30.933,233.222
+Abu Dhabi Grand Prix,Franco Colapinto,Alpine,43,20,NC,0,0,DNS,,
