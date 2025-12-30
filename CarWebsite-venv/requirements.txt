@@ -3,12 +3,13 @@ asgiref==3.9.1
 certifi==2025.7.14
 charset-normalizer==3.4.2
 colorama==0.4.6
+dj-database-url==3.0.1
 Django==5.1.11
 django-apscheduler==0.7.0
 django-resized==1.0.3
 djangorestframework==3.16.0
 idna==3.10
-#kagglehub==0.3.13
+kagglehub==0.3.13
 numpy==2.3.5
 packaging==25.0
 pandas==2.3.3
