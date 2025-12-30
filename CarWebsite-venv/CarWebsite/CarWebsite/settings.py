@@ -106,19 +106,11 @@ WSGI_APPLICATION = 'CarWebsite.wsgi.application'
 
 import dj_database_url
 DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        # "ENGINE":'django.db.backends.postgresql',
-        # "NAME":"CarWebsite",
-        # "USER":os.getenv("db_username"),
-        # "PASSWORD":os.getenv("db_password"),
-        # "PORT":5432
+    'default':
         dj_database_url.config(
         default=os.getenv("database_url"),
         conn_max_age=600
     )
-    }
 }
 
 
