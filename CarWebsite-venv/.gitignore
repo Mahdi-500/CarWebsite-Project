@@ -7,3 +7,4 @@ Scripts
 kaggle.json
 pyvenv.cfg
 CarWebsite/db.sqlite3
+CarWebsite/static
