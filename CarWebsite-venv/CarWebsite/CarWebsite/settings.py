@@ -115,7 +115,7 @@ DATABASES = {
         # "PASSWORD":os.getenv("db_password"),
         # "PORT":5432
         dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        default=os.getenv("database_url"),
         conn_max_age=600
     )
     }
