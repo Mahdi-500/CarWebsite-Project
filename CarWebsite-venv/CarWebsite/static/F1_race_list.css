@@ -1,0 +1,443 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.races-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-5px);
+}
+
+.back-button::before {
+    content: '←';
+    font-size: 1.2rem;
+}
+
+.page-header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+}
+
+.page-title {
+    font-size: 3rem;
+    color: #e10600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    font-weight: 300;
+}
+
+/* Stats Section */
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(225, 6, 0, 0.3);
+    border-color: rgba(225, 6, 0, 0.5);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    color: #e10600;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #aaa;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== Year Filter Dropdown ===== */
+.year-filter-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 14px 20px;
+    border-radius: 14px;
+    border: 2px solid rgba(225, 6, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Trophy icon */
+.filter-icon {
+    font-size: 1.5rem;
+}
+
+/* Dropdown itself */
+/* .year-dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding-right: 30px;
+} */
+
+/* Custom arrow */
+/* .dropdown-arrow {
+    pointer-events: none;
+    color: #e10600;
+    font-size: 0.9rem;
+} */
+
+/* Hover / focus effect */
+/* .year-filter-wrapper:hover {
+    border-color: #e10600;
+    box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.3);
+} */
+
+/* Dropdown options */
+/* .year-dropdown option {
+    background: #0b0b0f;
+    color: #fff;
+} */
+
+/* Results Filter Section */
+.filter-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-label {
+    font-size: 1.1rem;
+    color: #e10600;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.year-dropdown {
+    position: relative;
+    min-width: 200px;
+}
+
+.dropdown-select {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    appearance: none;
+    transition: all 0.3s ease;
+}
+
+.dropdown-select:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(225, 6, 0, 0.5);
+}
+
+.dropdown-select:focus {
+    outline: none;
+    border-color: #e10600;
+    box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.2);
+}
+
+.dropdown-select option {
+    background: #1a1a2e;
+    color: #fff;
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #e10600;
+}
+
+/* Races Section */
+.year-section {
+    margin-bottom: 50px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.year-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid rgba(225, 6, 0, 0.3);
+}
+
+.year-title {
+    font-size: 2.2rem;
+    color: #e10600;
+    font-weight: 700;
+}
+
+.year-count {
+    background: rgba(225, 6, 0, 0.2);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.races-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.race-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.race-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #e10600, #ff4444);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.race-card:hover::before {
+    transform: scaleX(1);
+}
+
+.race-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(225, 6, 0, 0.4);
+    border-color: rgba(225, 6, 0, 0.5);
+}
+
+.race-round {
+    display: inline-block;
+    background: rgba(225, 6, 0, 0.2);
+    color: #e10600;
+    padding: 6px 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.race-name {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.race-name:hover {
+    color: #e10600;
+}
+
+.race-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.race-info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+.race-info-icon {
+    width: 20px;
+    text-align: center;
+}
+
+.race-info-value {
+    color: #ccc;
+    font-weight: 600;
+}
+
+.race-badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.race-badge {
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-sprint {
+    background: linear-gradient(135deg, #ff6b35, #e10600);
+    color: #fff;
+}
+
+.badge-completed {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+.badge-upcoming {
+    background: rgba(255, 193, 7, 0.2);
+    color: #FFC107;
+    border: 1px solid #FFC107;
+}
+
+.race-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #e10600 0%, #c00500 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(225, 6, 0, 0.3);
+}
+
+.race-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(225, 6, 0, 0.6);
+}
+
+.no-races {
+    text-align: center;
+    padding: 80px 20px;
+    color: #aaa;
+}
+
+.no-races-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+    .dropdown-select {
+        font-size: 0.95rem;
+        padding: 12px 35px 12px 15px;
+    }
+
+    .year-dropdown {
+        min-width: 200px;
+    }
+
+    .filter-icon {
+        font-size: 1.2rem;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}

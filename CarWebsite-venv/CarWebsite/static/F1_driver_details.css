@@ -1,0 +1,421 @@
+.driver-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-5px);
+}
+
+.back-button::before {
+    content: '←';
+    font-size: 1.2rem;
+}
+
+/* Driver Header */
+.driver-header {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.driver-number-large {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #e10600 0%, #c00500 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 8px 30px rgba(225, 6, 0, 0.5);
+    flex-shrink: 0;
+}
+
+.driver-info-header {
+    flex: 1;
+}
+
+.driver-name-title {
+    font-size: 3rem;
+    color: #e10600;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.driver-team-title {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.driver-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.meta-icon {
+    font-size: 1.3rem;
+}
+
+.meta-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-label {
+    font-size: 0.8rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.meta-value {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Career History Section */
+.career-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #e10600;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.career-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.career-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.career-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #e10600;
+    border-radius: 12px 0 0 12px;
+}
+
+.career-card:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 5px 20px rgba(225, 6, 0, 0.3);
+}
+
+.career-team {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.career-years {
+    color: #e10600;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Results Filter Section */
+.filter-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-label {
+    font-size: 1.1rem;
+    color: #e10600;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.year-dropdown {
+    position: relative;
+    min-width: 200px;
+}
+
+.dropdown-select {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    appearance: none;
+    transition: all 0.3s ease;
+}
+
+.dropdown-select:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(225, 6, 0, 0.5);
+}
+
+.dropdown-select:focus {
+    outline: none;
+    border-color: #e10600;
+    box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.2);
+}
+
+.dropdown-select option {
+    background: #1a1a2e;
+    color: #fff;
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #e10600;
+}
+
+/* Results Table */
+.results-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    overflow-x: auto;
+}
+
+.season-results {
+    margin-bottom: 30px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+.results-table thead {
+    background: rgba(225, 6, 0, 0.2);
+}
+
+.results-table th {
+    padding: 15px 12px;
+    text-align: left;
+    color: #e10600;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    border-bottom: 2px solid #e10600;
+}
+
+.results-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.results-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.results-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.race-name-cell {
+    font-weight: 600;
+    color: #fff;
+}
+
+.position-cell {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.position-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(225, 6, 0, 0.2);
+    border: 2px solid rgba(225, 6, 0, 0.5);
+}
+
+.position-1 {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-color: #FFD700;
+    color: #1a1a2e;
+}
+
+.position-2 {
+    background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+    border-color: #C0C0C0;
+    color: #1a1a2e;
+}
+
+.position-3 {
+    background: linear-gradient(135deg, #CD7F32, #B8732D);
+    border-color: #CD7F32;
+    color: #1a1a2e;
+}
+
+.points-cell {
+    font-weight: 700;
+    color: #4CAF50;
+    text-align: center;
+}
+
+.time-cell {
+    font-family: 'Courier New', monospace;
+    color: #ccc;
+}
+
+.speed-cell {
+    color: #e10600;
+    font-weight: 600;
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #aaa;
+}
+
+.no-results-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.3;
+}
+
+@media (max-width: 1024px) {
+    .driver-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .driver-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .meta-item {
+        justify-content: center;
+    }
+
+    .driver-name-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .driver-number-large {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .driver-name-title {
+        font-size: 1.8rem;
+    }
+
+    .career-timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .results-section {
+        padding: 15px;
+    }
+
+    .filter-container {
+        flex-direction: column;
+    }
+
+    .year-dropdown {
+        width: 100%;
+    }
+}

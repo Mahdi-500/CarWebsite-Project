@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.race-header {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.race-title {
+    font-size: 2.5rem;
+    color: #e10600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+.race-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.race-info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.schedule-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.schedule-title {
+    font-size: 1.8rem;
+    color: #e10600;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.session-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.session-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #e10600, #ff4444);
+}
+
+.session-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(225, 6, 0, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.session-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.session-icon {
+    font-size: 1.8rem;
+}
+
+.session-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.session-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 42px;
+}
+
+.session-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+.session-detail-label {
+    color: #aaa;
+    min-width: 60px;
+}
+
+.session-detail-value {
+    color: #fff;
+    font-weight: 600;
+}
+
+.sprint-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #ff6b35, #e10600);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 10px;
+}
+
+.session-unavailable {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.session-unavailable .session-name::after {
+    content: ' - N/A';
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.results-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    overflow-x: auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #e10600;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.results-table thead {
+    background: rgba(225, 6, 0, 0.2);
+}
+
+.results-table th {
+    padding: 18px 15px;
+    text-align: left;
+    color: #e10600;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    border-bottom: 2px solid #e10600;
+}
+
+.results-table td {
+    padding: 18px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.results-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.results-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: scale(1.01);
+}
+
+.position-cell {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #e10600;
+    text-align: center;
+    width: 80px;
+}
+
+.position-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(225, 6, 0, 0.2);
+    border: 2px solid #e10600;
+}
+
+.position-1 .position-badge {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-color: #FFD700;
+    color: #1a1a2e;
+    font-size: 1.2rem;
+}
+
+.position-2 .position-badge {
+    background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+    border-color: #C0C0C0;
+    color: #1a1a2e;
+}
+
+.position-3 .position-badge {
+    background: linear-gradient(135deg, #CD7F32, #B8732D);
+    border-color: #CD7F32;
+    color: #1a1a2e;
+}
+
+.driver-cell {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.team-cell {
+    color: #aaa;
+}
+
+.points-cell {
+    font-weight: 700;
+    color: #4CAF50;
+    text-align: center;
+}
+
+.time-cell {
+    font-family: 'Courier New', monospace;
+    color: #ccc;
+}
+
+.grid-cell, .laps-cell {
+    text-align: center;
+    color: #aaa;
+}
+
+.status-finished {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.status-dnf {
+    color: #ff6b6b;
+    font-weight: 600;
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #aaa;
+}
+
+.no-results-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.3;
+}
+
+.podium-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.podium-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.podium-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(225, 6, 0, 0.3);
+}
+
+.podium-position {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.podium-driver {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.podium-team {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+    .race-title {
+        font-size: 2rem;
+    }
+
+    .results-section {
+        padding: 20px;
+    }
+
+    .podium-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .race-info {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .results-table th,
+    .results-table td {
+        padding: 12px 8px;
+        font-size: 0.85rem;
+    }
+
+    .position-badge {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
