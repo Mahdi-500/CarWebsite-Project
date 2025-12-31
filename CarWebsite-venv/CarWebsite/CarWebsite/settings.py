@@ -71,6 +71,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -109,7 +110,8 @@ DATABASES = {
     'default':
         dj_database_url.config(
         default=os.getenv("database_url"),
-        conn_max_age=600
+        conn_max_age=600,
+        ssl_require=True
     )
 }
 

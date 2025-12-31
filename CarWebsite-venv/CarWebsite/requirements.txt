@@ -8,6 +8,7 @@ Django==5.1.11
 django-apscheduler==0.7.0
 django-resized==1.0.3
 djangorestframework==3.16.0
+gunicorn==23.0.0
 idna==3.10
 kagglehub==0.3.13
 numpy==2.3.5
@@ -26,3 +27,4 @@ tqdm==4.67.1
 tzdata==2025.2
 tzlocal==5.3.1
 urllib3==2.5.0
+whitenoise==6.11.0
