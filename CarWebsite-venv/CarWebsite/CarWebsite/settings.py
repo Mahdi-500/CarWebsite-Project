@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv("secret_key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://carwebsite-project-4.onrender.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
