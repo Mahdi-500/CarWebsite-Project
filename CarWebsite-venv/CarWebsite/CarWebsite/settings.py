@@ -27,9 +27,9 @@ load_dotenv(dotenv_path=r'../.env')
 SECRET_KEY = os.getenv("secret_key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -107,12 +107,18 @@ WSGI_APPLICATION = 'CarWebsite.wsgi.application'
 
 import dj_database_url
 DATABASES = {
-    'default':
-        dj_database_url.config(
-        default=os.getenv("database_url"),
-        conn_max_age=600,
-        ssl_require=True
-    )
+    'default': {
+        'ENGINE':'django.db.backends.postgresql',
+        'NAME':'CarWebsite',
+        'USER':os.getenv('db_username'),
+        'PASSWORD':os.getenv('db_password'),
+        'PORT':'5432'
+    }
+    #     dj_database_url.config(
+    #     default=os.getenv("database_url"),
+    #     conn_max_age=600,
+    #     ssl_require=True
+    # )
 }
 
 
@@ -161,10 +167,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR,"images")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ? security
-SECURE_CONTENT_TYPE_NOSNIFF = True
-X_FRAME_OPTIONS = "DENY"
-SECURE_BROWSER_XSS_FILTER = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# X_FRAME_OPTIONS = "DENY"
+# SECURE_BROWSER_XSS_FILTER = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
-CORS_ALLOW_ALL_ORIGINS = False
+# CORS_ALLOW_ALL_ORIGINS = False

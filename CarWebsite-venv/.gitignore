@@ -8,3 +8,4 @@ kaggle.json
 pyvenv.cfg
 CarWebsite/db.sqlite3
 CarWebsite/static
+__pycache__/
