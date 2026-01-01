@@ -87,3 +87,8 @@ Create it based on a file named .env.example in this folder
     python manage.py runserver
 ```
 then Open your browser at http://127.0.0.1:8000
+
+
+# 📄 License
+
+This project is for educational and personal use.
