@@ -1,11 +1,6 @@
 # 🚗 Car Website (Django)
 
 This repository contains a **Django-based web application** for exploring motorsport data, focusing on Formula One and Cars. It includes races, drivers, teams, and circuits, with detailed statistics and filtering options For Fomula1.
-
-## Future developments
-- [ ] create an API for car app
-- [ ] develop car app 
-
 > The Django project is located inside a subfolder, and the virtual environment is **not included**. This README guides you through setting up the project from scratch.
 
 ---
@@ -92,3 +87,8 @@ then Open your browser at http://127.0.0.1:8000
 # 📄 License
 
 This project is for educational and personal use.
+<br>
+
+# Future developments
+- [ ] create an API for car app
+- [ ] develop car app 
