@@ -6,6 +6,7 @@ This app is divided into **five main sections** accessible through the website.
 
 > ⚡ **Note:** The backend is developed manually by me, while the frontend is fully generated with AI assistance.
 
+> ⚡ **Note:** only the 2025 seasontimes are in IRST others are in CET/CEST(for summer)
 ---
 
 ## 📂 Data
@@ -134,4 +135,5 @@ https://github.com/user-attachments/assets/2e295fb5-b913-4fac-a2e8-75bcbc230510
 <br>
 
 # Future developments
-- [ ] update the date and time for all races 
+- [ ] include the date and time for allc races
+- [ ] fix the timezone for all races
