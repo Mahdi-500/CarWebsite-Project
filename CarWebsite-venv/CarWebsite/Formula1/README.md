@@ -6,7 +6,7 @@ This app is divided into **five main sections** accessible through the website.
 
 > ⚡ **Note:** The backend is developed manually by me, while the frontend is fully generated with AI assistance.
 
-> ⚡ **Note:** only the 2025 seasontimes are in IRST others are in CET/CEST(for summer)
+> ⚡ **Note:** only the 2025 seasontimes are in IRST others are in CET/CEST(for races between(Mar-Oct))
 ---
 
 ## 📂 Data
