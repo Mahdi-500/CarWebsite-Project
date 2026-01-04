@@ -28,8 +28,9 @@ class drivers(models.Model):
     def __str__(self):
         return self.first_name + " " + self.last_name
     
-
-
+    class Meta:
+        verbose_name = 'driver'
+        verbose_name_plural = 'drivers'
 
 class circuits(models.Model):
     circuit_id = models.BigAutoField(primary_key=True)
@@ -37,14 +38,16 @@ class circuits(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
-    latitude = models.FloatField(blank=True, null=True)
-    longitude = models.FloatField(blank=True, null=True)
-    altitude = models.FloatField(blank=True, null=True)
+    latitude = models.FloatField(blank=True, null=True, default=None)
+    longitude = models.FloatField(blank=True, null=True, default=None)
+    altitude = models.FloatField(blank=True, null=True, default=None)
 
     def __str__(self):
         return self.name
 
-
+    class Meta:
+        verbose_name = 'circuit'
+        verbose_name_plural = 'circuits'
 
 class races(models.Model):
     race_id = models.BigAutoField(primary_key=True)
@@ -52,23 +55,27 @@ class races(models.Model):
     year = models.IntegerField()
     round = models.PositiveIntegerField()
     name = models.CharField(max_length=100)
-    fp1_date = models.DateField(blank=True, null=True)
-    fp1_time = models.TimeField(blank=True, null=True)
-    fp2_date = models.DateField(blank=True, null=True)
-    fp2_time = models.TimeField(blank=True, null=True)
-    fp3_date = models.DateField(blank=True, null=True)
-    fp3_time = models.TimeField(blank=True, null=True)
-    sprint_quali_date = models.DateField(blank=True, null=True)
-    sprint_quali_time = models.TimeField(blank=True, null=True)
-    sprint_race_date = models.DateField(blank=True, null=True)
-    sprint_race_time = models.TimeField(blank=True, null=True)
-    quali_date = models.DateField(blank=True, null=True)
-    quali_time = models.TimeField(blank=True, null=True)
-    race_date = models.DateField()
-    race_time = models.TimeField(blank=True, null=True)
+    fp1_date = models.DateField(blank=True, null=True, default=None)
+    fp1_time = models.TimeField(blank=True, null=True, default=None)
+    fp2_date = models.DateField(blank=True, null=True, default=None)
+    fp2_time = models.TimeField(blank=True, null=True, default=None)
+    fp3_date = models.DateField(blank=True, null=True, default=None)
+    fp3_time = models.TimeField(blank=True, null=True, default=None)
+    sprint_quali_date = models.DateField(blank=True, null=True, default=None)
+    sprint_quali_time = models.TimeField(blank=True, null=True, default=None)
+    sprint_race_date = models.DateField(blank=True, null=True, default=None)
+    sprint_race_time = models.TimeField(blank=True, null=True, default=None)
+    quali_date = models.DateField(blank=True, null=True, default=None)
+    quali_time = models.TimeField(blank=True, null=True, default=None)
+    race_date = models.DateField(blank=True, null=True, default=None)
+    race_time = models.TimeField(blank=True, null=True, default=None)
 
     def __str__(self):
         return f"{self.name} in {self.year}"
+    
+    class Meta:
+        verbose_name = 'race'
+        verbose_name_plural = 'races'
 
 
 
@@ -81,6 +88,10 @@ class driverStandings(models.Model):
     position = models.SmallIntegerField()
     wins_in_season = models.SmallIntegerField()
 
+    class Meta:
+        verbose_name = 'driver standing'
+        verbose_name_plural = 'driver standings'
+
 
 
 class constructors(models.Model):
@@ -92,7 +103,9 @@ class constructors(models.Model):
     def __str__(self):
         return self.name
 
-
+    class Meta:
+        verbose_name = 'constructor'
+        verbose_name_plural = 'constructors'
 
 class results(models.Model):
     result_id = models.BigAutoField(primary_key=True)
@@ -104,10 +117,13 @@ class results(models.Model):
     final_position = models.CharField(max_length=5)
     points = models.SmallIntegerField()
     laps = models.SmallIntegerField()
-    time = models.CharField(max_length=20, null=True)
+    time = models.CharField(max_length=20, null=True, default=None)
     fastest_lap = models.DurationField()
     top_speed_of_fl = models.FloatField(verbose_name="fastest lap top speed") # ? fl = fastest lap
 
     def __str__(self):
         return f"results of {self.driver_id.first_name} {self.driver_id.last_name} for {self.race_id}"
     
+    class Meta:
+        verbose_name = 'Result'
+        verbose_name_plural = 'Results'
