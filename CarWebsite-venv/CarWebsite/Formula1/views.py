@@ -38,7 +38,7 @@ def circuit_detail_view(request, id):
 
 def race_list_view(request):
     total_races = races.objects.values_list('race_id', 'name', 'round', 'year', 'race_time', 'race_date', 'circuit_id__name',
-                                            'circuit_id__country').order_by('race_id')
+                                            'circuit_id__country').order_by('round')
     
     total_circuits = circuits.objects.values('circuit_id')
     # if datetime.datetime.now().month == 12:
