@@ -135,5 +135,5 @@ https://github.com/user-attachments/assets/2e295fb5-b913-4fac-a2e8-75bcbc230510
 <br>
 
 # Future developments
-- [*] include the date and time for all races (before 2018 is not available)
+- [x] include the date and time for all races (before 2018 is not available)
 - [ ] fix the timezone for all races
