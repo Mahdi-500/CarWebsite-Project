@@ -9,3 +9,5 @@ pyvenv.cfg
 CarWebsite/db.sqlite3
 CarWebsite/static
 __pycache__/
+CarWebsite/Formula1/management/
+share
